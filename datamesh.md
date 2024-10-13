@@ -13,12 +13,44 @@
     + Selfservice / Discoverability
 
 
+*'Interestingly, several organizations claim to have implemented the data mesh “by accident,” perceiving this paradigm as the natural evolution of data management.'*
+
+### Data Mesh
+    many arrive here by them self, lowering the barrier for company to publish, find, use data
+    domain experts (who ever they might be; publish owning data products)
+
+*'Many data products fail because they are a solution in search of a problem – for example, ingesting a new dataset into the data platform because ‘someone’ will find it useful. Adding more data does not necessarily solve a customer’s problems – or provide them with value. '*
+
+### Data Mesh Principles
+    1. **Domain-Oriented Decentralized Data Ownership and Architecture**
+    2. **Data as a Product**
+    3. **Self-Serve Data Infrastructure as a Platform**
+    4. **Federated Computational Governance**
+
+### Data product req
+    Discoverable
+    Addressable (no place)
+    Self describing 
+    Owned and taken cared of (cross functional?)
+
 ### Thesaurus
     Lineage 
     Quality 
     Governance
 
-### Companies providing platforms
+### data certainty 
+    * Raw data
+    * Cureated data. Accuracy, relevant repersentation
+    * Authoritative. Relevant, complete, consistent, documented.
+
+    
+![Data Mesh Architecture](./pics/data_certitude.svg)
+
+
+### Components
+
+
+### Companies providing platforms 
 [atlan](https://atlan.com/?ref=/p/data-catalog-data-mesh/)
     - data catalog
     - metadata man
@@ -35,3 +67,21 @@
 [Snowflake](www.snowflake.com/)
 
 [Data Mesh Manager](https://www.datamesh-manager.com/)
+
+
+### Data Catalogues (data, metadata, events)
+[Linkedins Datahub](https://datahubproject.io/)
+
+[Apache Atlas](https://atlas.apache.org/#/)
+
+[Amundsen](https://www.amundsen.io/)
+
+[Netflix Metacat](https://github.com/Netflix/metacat)
+[info](https://netflixtechblog.com/metacat-making-big-data-discoverable-and-meaningful-at-netflix-56fb36a53520)
+
+### Data compute systems
+Airflow
+Dagster
+
+
+
