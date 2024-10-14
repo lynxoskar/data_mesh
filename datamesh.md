@@ -2,6 +2,7 @@
 ### System of records. Place oriented. Mutable.
     + / - integration
     + deduplication
+
     - slow change
     - no inherent change tracking
     - different needs / cross dep conflicts
@@ -49,6 +50,13 @@
 
 ### Components
 
+    Data Governance system
+    Data Catalogue
+    Storage
+
+    Execution Governance 
+    Execution System
+
 
 ### Companies providing platforms 
 [atlan](https://atlan.com/?ref=/p/data-catalog-data-mesh/)
@@ -79,9 +87,15 @@
 [Netflix Metacat](https://github.com/Netflix/metacat)
 [info](https://netflixtechblog.com/metacat-making-big-data-discoverable-and-meaningful-at-netflix-56fb36a53520)
 
-### Data compute systems
-Airflow
-Dagster
+### Workflow orchestration systems, execution governance. [Differential Dataflow](https://github.com/timelydataflow/differential-dataflow/blob/master/differentialdataflow.pdf)
+[Airflow](https://airflow.apache.org/)
+[Dagster](https://dagster.io/)
+[Luigi](https://github.com/spotify/luigi)
+[Kubelow](https://www.kubeflow.org/)
+[Prefect](https://www.prefect.io/)
+[Netflix, meastro](https://github.com/Netflix/maestro)
+[Argo workflows](https://argoproj.github.io/workflows/)
 
-
+### AI platforms
+[]
 
