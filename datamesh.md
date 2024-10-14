@@ -58,7 +58,7 @@
     Execution System
 
 
-### Companies providing platforms 
+### Companies providing platforms/services for complete immersion
 [atlan](https://atlan.com/?ref=/p/data-catalog-data-mesh/)
     - data catalog
     - metadata man
@@ -87,15 +87,23 @@
 [Netflix Metacat](https://github.com/Netflix/metacat)
 [info](https://netflixtechblog.com/metacat-making-big-data-discoverable-and-meaningful-at-netflix-56fb36a53520)
 
-### Workflow orchestration systems, execution governance. [Differential Dataflow](https://github.com/timelydataflow/differential-dataflow/blob/master/differentialdataflow.pdf)
+### Workflow orchestration systems, execution governance. 
+
+
 [Airflow](https://airflow.apache.org/)
+
 [Dagster](https://dagster.io/)
+
 [Luigi](https://github.com/spotify/luigi)
+
 [Kubelow](https://www.kubeflow.org/)
+
 [Prefect](https://www.prefect.io/)
+
 [Netflix, meastro](https://github.com/Netflix/maestro)
+
 [Argo workflows](https://argoproj.github.io/workflows/)
 
-### AI platforms
-[]
 
+
+[Differential Dataflow](https://github.com/timelydataflow/differential-dataflow/blob/master/differentialdataflow.pdf)
