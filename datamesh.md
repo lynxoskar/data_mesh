@@ -92,11 +92,26 @@
     - self service
 
 [DataBricks](https://www.databricks.com/)
-    - lakehouse platform
+    -   Databricks
+        Databricks is a unified data analytics platform built on Apache Spark.
+    Key features:
+        Lakehouse architecture combining data lake and data warehouse capabilities
+        Strong support for data engineering, data science, and machine learning workflows
+        Delta Lake for ACID transactions on data lakes
+        Collaborative notebooks for data analysis and visualization
+        Target users: Data engineers, data scientists, and analysts in organizations dealing with big data and advanced analytics
+        Snowflake
 
 [Danodo](https://www.denodo.com/)
 
 [Snowflake](www.snowflake.com/)
+    -   Snowflake is a cloud-based data warehousing platform.
+    Key features:
+        Separation of storage and compute for scalability
+        Support for structured and semi-structured data
+        Easy data sharing and collaboration
+        Strong SQL support and optimization for analytics queries
+        Target users: Business analysts, data analysts, and organizations focused on business intelligence and data warehousing
 
 [Data Mesh Manager](https://www.datamesh-manager.com/)
 
@@ -112,7 +127,14 @@
 [info](https://netflixtechblog.com/metacat-making-big-data-discoverable-and-meaningful-at-netflix-56fb36a53520)
 
 ### Workflow orchestration systems, execution governance. 
-
+[estuary](https://estuary.dev/)
+        - Estuary is a real-time data operations platform.
+    Key features:
+        Real-time data integration and ETL
+        Support for streaming and batch data processing
+        Schema evolution and data quality management
+        Open-source core (Flow) with cloud-hosted option
+        Target users: Data engineers and organizations dealing with real-time data streams and complex data pipelines
 
 [Airflow](https://airflow.apache.org/)
 
