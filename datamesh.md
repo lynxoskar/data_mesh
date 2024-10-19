@@ -1,67 +1,57 @@
 ---
-theme: moon  
-transition : slid
-progress : true
+theme: sky  
+
+
 title: "Data Mesh"
 
 ---
-
- 
 
 # Data Mesh
 
 > *'Interestingly, several organizations claim to have implemented the data mesh “by accident,” perceiving this paradigm as the natural evolution of data management.'*
 
---
+---
+
 
 
 # Systems
 ### System of records. 
-### Data Pipelines. 
+### Data Lakes and Pipelines. 
 
 Mutable.
     + atomic 
     + deduplication
     + transactional
+
     
-    - Place oriented. 
-    - slow change
-    - no inherent change tracking
-    - different needs / cross dep conflicts
-    - scalability
-    - limited selfservice
+    - Place oriented. (often the a particular system)
+    - Slow change (data of different shapes couses difficulties).
+    - No inherent change tracking 
+    - Different needs / cross department-systems conflicts or discrepances.
+    - Scalability.
+    - Limited selfservice.
 
 ---
 
-<div class="mermaid">
-sequenceDiagram
-    participant Alice
-    participant Bob 
-    Alice->>John: Hello John, how are you?
-    loop Healthcheck
-        John->>John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts <br/>prevail!
-    John-->>Alice: Great!
-    John->>Bob: How about you?
-    Bob-->>John: Jolly good!
-</div> 
+# DataMesh vs Data Lakes
+
+Data mesh aims to address the limitations of traditional data management approaches by:
+
+*   **Shifting data ownership**: From centralized teams to domain experts who understand 
+the data best, leading to better data quality and governance.
+
+*   **Decoupling data pipelines**: Into smaller, domain-specific units, allowing for more agile development and deployment of data products.
+
+*   **Emphasizing data as a product**: Encourages domain teams to focus on delivering value to data consumers through high-quality, discoverable data products.
+
+*   **Providing self-service infrastructure**: Empowers domain teams to manage their data products independently, promoting agility and innovation.
+
+This distributed approach promotes scalability, agility, and data quality by empowering domain teams and fostering a data-driven culture. Data mesh recognizes that data is not a monolithic entity but rather a collection of interconnected, domain-specific datasets that can be best managed by those closest to them.
 
 ---
 
-### System of Records. Single Data Team
 
-- [ ] Mercury
-- [x] Venus
-- [x] Earth (Orbit/Moon)
-- [x] Mars
-- [ ] Jupiter
-- [ ] Saturn
-- [ ] Uranus
-- [ ] Neptune
-- [ ] Comet Haley
 
----
 
 ### Data as product systems. Data Ids, versioned, immutable data.
     + Governance; policies, data properties
@@ -86,28 +76,75 @@ sequenceDiagram
 |Accessibility|Limited to operational users| Broad, self-service access
 
 
+### Organisations Great devide
+    system departments vica vie domain teams. 
 
 
 
+---
 
+### Data Mesh vs Data Lakes...
+   *'Many data products fail because they are a solution in search of a problem – for example, ingesting a new dataset into the data platform because ‘someone’ will find it useful. Adding more data does not necessarily solve a customer’s problems – or provide them with value. '*
 
+    *'It's important to note that data mesh adoption is an evolving process. While the technology is largely available, the greater challenge lies in the cultural and organizational shifts required to implement a successful data mesh. Many organizations are taking an incremental approach, starting with specific data products and gradually expanding their mesh over time'*
 
-### Data Mesh
-    many arrive here by them self, lowering the barrier for company to publish, find, use data
-    domain experts (who ever they might be; publish owning data products)
-
-*'Many data products fail because they are a solution in search of a problem – for example, ingesting a new dataset into the data platform because ‘someone’ will find it useful. Adding more data does not necessarily solve a customer’s problems – or provide them with value. '*
-
-*'It's important to note that data mesh adoption is an evolving process. While the technology is largely available, the greater challenge lies in the cultural and organizational shifts required to implement a successful data mesh. Many organizations are taking an incremental approach, starting with specific data products and gradually expanding their mesh over time'*
+---
 
 ### Data Mesh Principles
     1. Domain-Oriented Decentralized Data Ownership and Architecture
     2. Data as a Product
-    3. Self-Serve Data Infrastructure as a Platform
+    3. Self-Serve Data Infrastructure 
     4. Federated Computational Governance
 
-#### Governance
+--
 
+#### 1. Domain-Oriented Ownership 'Tackling complexity in the heart of data...'
+    - **eric evans book** [domain driven design](https://fabiofumarola.github.io/nosql/readingMaterial/Evans03.pdf)
+        **bounded context**; same id might have different associated data depending on context.
+        **unambigious language** clearly defined terms within context. 
+    - Expert Teams (not systems) with deep understanding of domain and data
+    - Aligns with problem solving and change. 
+    - Improves decision making. 
+    - Decentralized; ownership not centralized.
+
+--
+
+#### 2.Data as a product
+    - **push instead of pull** -> record of change. Cultural shift;  Ownership gets claimed - not assigned. Deliver value, produce value. Not complete assignments. 
+    - **strategic asset** -> Core product. Not a byproduct of operations. Data products gets a vision, strategy and roadmap.
+    - **quality focus** -> Usable, understandable, correct, on-time, complete.
+    
+
+--
+#### 3.Self-Serve Data Infrastructure 
+    - Producers; Unified platform, empowering domain teams (not system teams) to   autonomously develop and manage data products.
+    - Data is addressable rather then in place.
+    - Consumers; Discoverebility and affordance build.
+
+--
+#### 4.Federated Computational Governance
+    - Establishes standards for data product properties and lifecycle
+        - structured, unstructured
+        - complex or simple
+        - linage 
+        - set, lot or appendstucture (deduplicated)
+        - events
+        - tombstoning / inits
+    - Automated enforcement
+    - Access and security
+    - Strikes balance 
+    
+--
+
+
+# Future
+- Data from id:links. Data + metadata interpreted by ai. Every consumer will be limited only by finding, vision,  taste, curiosity, creativity.
+
+- [NoteboolLM](https://notebooklm.google.com/notebook/4f655dcf-38ad-4646-9b39-b5c7d16f24c4?original_referer=https:%2F%2Fblog.google%23&pli=1)
+
+- [Generated podcast](https://notebooklm.google.com/notebook/4f655dcf-38ad-4646-9b39-b5c7d16f24c4/audio)
+
+---
 
 ### Data product req
     Discoverable

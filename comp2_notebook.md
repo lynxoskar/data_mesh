@@ -1,4 +1,9 @@
- ## Comparing Data Mesh, Pipelines, Systems of Record, and Siloed Sources of Truth
+---
+
+theme : sky
+---
+
+## Comparing Data Mesh, Pipelines, Systems of Record, and Siloed Sources of Truth
 The sources describe **data mesh** as a **decentralized data architecture** that breaks down monolithic data platforms into smaller, domain-oriented data products. These products are owned and managed by teams with deep domain knowledge, promoting data quality and agility.
 
 --
@@ -23,7 +28,10 @@ Here's a comparison table summarizing these concepts:
 | Focus                  | Data products as value units                 | Data flow and processing stages             | Transactional data consistency    | Limited data sharing and integration |
 | Scalability             | High, through distributed ownership         | Limited by central platform                 | Dependent on specific system      | Low, hindered by silos              |
 | Data Quality           | Emphasized through product thinking          | Dependent on centralized cleansing           | Critical for operational integrity | Inconsistent, prone to errors        |
-| Agility                | High, through domain autonomy               | Limited by pipeline coupling                | Dependent on system architecture | Low, hampered by data isolation     |
+| Agility                | High, through domain autonomy               | Limited by pipeline coupling                | Dependent on system architecture | Low, hampered by data isolation    
+
+---
+ |
 ### Data Mesh vs. Traditional Approaches
 Data mesh aims to address the limitations of traditional data management approaches by:
 *   **Shifting data ownership**: From centralized teams to domain experts who understand the data best, leading to better data quality and governance.
