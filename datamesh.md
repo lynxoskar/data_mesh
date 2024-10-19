@@ -1,20 +1,74 @@
-## Data system
-### System of records. Place oriented. Mutable.
-    + / - integration
+---
+theme: moon  
+transition : slid
+progress : true
+title: "Data Mesh"
+
+---
+
+ 
+
+# Data Mesh
+
+> *'Interestingly, several organizations claim to have implemented the data mesh “by accident,” perceiving this paradigm as the natural evolution of data management.'*
+
+--
+
+
+# Systems
+### System of records. 
+### Data Pipelines. 
+
+Mutable.
+    + atomic 
     + deduplication
     + transactional
-    + 
-
+    
+    - Place oriented. 
     - slow change
     - no inherent change tracking
     - different needs / cross dep conflicts
     - scalability
     - limited selfservice
 
+---
+
+<div class="mermaid">
+sequenceDiagram
+    participant Alice
+    participant Bob 
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+</div> 
+
+---
+
+### System of Records. Single Data Team
+
+- [ ] Mercury
+- [x] Venus
+- [x] Earth (Orbit/Moon)
+- [x] Mars
+- [ ] Jupiter
+- [ ] Saturn
+- [ ] Uranus
+- [ ] Neptune
+- [ ] Comet Haley
+
+---
+
 ### Data as product systems. Data Ids, versioned, immutable data.
     + Governance; policies, data properties
     + Selfservice / Discoverability
     + Focus on value
+
+---
 
 ### Data Great devide
     Operational data, accuracy consistency availability for real-time use
@@ -34,7 +88,7 @@
 
 
 
-*'Interestingly, several organizations claim to have implemented the data mesh “by accident,” perceiving this paradigm as the natural evolution of data management.'*
+
 
 
 
@@ -47,10 +101,13 @@
 *'It's important to note that data mesh adoption is an evolving process. While the technology is largely available, the greater challenge lies in the cultural and organizational shifts required to implement a successful data mesh. Many organizations are taking an incremental approach, starting with specific data products and gradually expanding their mesh over time'*
 
 ### Data Mesh Principles
-    1. **Domain-Oriented Decentralized Data Ownership and Architecture**
-    2. **Data as a Product**
-    3. **Self-Serve Data Infrastructure as a Platform**
-    4. **Federated Computational Governance**
+    1. Domain-Oriented Decentralized Data Ownership and Architecture
+    2. Data as a Product
+    3. Self-Serve Data Infrastructure as a Platform
+    4. Federated Computational Governance
+
+#### Governance
+
 
 ### Data product req
     Discoverable
