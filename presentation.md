@@ -1,5 +1,5 @@
 ---
-theme: sky  
+theme: black  
 
 
 title: "Data Mesh"
@@ -33,20 +33,19 @@ title: "Data Mesh"
 
 ---
 
-### System of records [SOR] 
+### System of records 
 Systems of records (SOR) are traditional, centralized systems that serve as the authoritative source for specific data and/or functions within an organization. **Operative flow**
 
 --
 
 **SOR cont.**
-* Place oriented
-* Mutable - Deduplicated data
-* Atomic operations - transactional 
-* Consistency - single source of thruth   
-* Slow change - limited agility, system modeling creates bottlenecks
-* No inherent change tracking 
-* Scalability.
-* Limited selfservice, discoverebility. 
+*   Place oriented
+*   Mutable - Deduplicated data
+*   Atomic operations - transactional 
+*   Consistency - single source of thruth   
+*   Slow change - system modeling creates bottlenecks
+*   No inherent change tracking 
+*   Limited selfservice, discoverebility.*  
 
 ---
 
@@ -112,7 +111,7 @@ Traditional pipelines with centralized data platform. Data flowing through a ser
 --
 
 #### 1. Domain-Oriented Data 'Tackling complexity in the heart of data...'
-*'The Domain-Oriented approach, rooted in DDD principles, aims to create a business-aligned data architecture. Empowering domain teams to take ownership of their data, leading to more accurate, relevant, and usable data products across the organization. This approach addresses many of the challenges faced by traditional, centralized data management systems, particularly in large, complex organizations with diverse data needs.'*
+*'The Domain-Oriented approach, aims to create a business-aligned data architecture. Empowering domain teams to take ownership of their data, leading to more accurate, relevant, and usable data products across the organization. This approach addresses many of the challenges faced by traditional, centralized data management systems, particularly in large, complex organizations with diverse data needs.'*
 --
 
 ### 1. DDD - cont.
@@ -134,13 +133,15 @@ Domain-Oriented data emphasizes using a common language shared by both technical
 **Domain Experts:**
 Domain-Oriented data relies heavily on the knowledge and input of domain experts, ensuring that data models and structures accurately reflect the business reality
 
-
 --
 
-##### 1. Domain-Oriented Data Cont
+#### 1. Domain-Oriented Data Cont
 
 - **Decentralized Ownership**: Each business domain takes responsibility for its own data.
 - **Domain Expertise**: Domain teams, with their deep understanding of the business context, manage and provide data.
+
+--
+
 - **Alignment with Business Structure**: This approach mirrors how modern businesses employ specialized teams for specific operations.
 - **Improved Decision-Making**: By placing data ownership closer to the source, it enhances data-driven decision-making.
 
@@ -151,15 +152,20 @@ Domain-Oriented data relies heavily on the knowledge and input of domain experts
 
 --
 
+#### Data as a product cont
 - **Product thinking** Data gets a vision, strategy, and roadmap. Ownership enhances stewardship, innovation and experimentation. 
 - **Push vs pull** record of change. Cultural shift;  Ownership gets claimed - not assigned. Deliver value; not complete assignments.
+
+--
+
+#### Data as a product cont
 - **Strategic asset**: Core product. Not a byproduct of operations. Data products gets a vision, strategy and roadmap.
 - **Quality focus**: Usable, understandable, correct, on-time, complete.
 - **Lifecycle Management**: Data products are managed through their entire lifecycle, from creation to retirement
     
 ---
 
-#### 3.Self-Serve Data Infrastructure 
+#### 3. Self-Serve Data Infrastructure 
 
 *'This principle aims to provide a platform that enables domain teams to easily create, maintain, and use data products.'*
 
@@ -181,7 +187,7 @@ Domain-Oriented data relies heavily on the knowledge and input of domain experts
 
 ---
 
-#### 4.Federated Computational Governance
+#### 4. Federated Computational Governance
 
 '*This principle ensures interoperability and consistency across the decentralized data ecosystem.*'
 
@@ -189,12 +195,12 @@ Domain-Oriented data relies heavily on the knowledge and input of domain experts
 
 - **Global Standards**: Establishes organization-wide standards for data. Required metadata and conventions.
         
-        context: prod | preprod | test
+        namespace: prod | preprod | test
         owner
-        linage
-        structured | unstructured,         
-        simple | complex 
-        lot | set | appendstructure
+        linage: data & execution
+        format: structured | unstructured,         
+            simple | complex 
+            lot | set | appendstructure
         life time events
         tombstoning | inits
         authorization/authentication
@@ -210,7 +216,7 @@ Domain-Oriented data relies heavily on the knowledge and input of domain experts
 ---
 
 #### Summary:
-'*These principles work together to create a data ecosystem that is scalable, flexible, and aligned with business needs. The domain-oriented approach (Principle 1) and data as a product mindset (2) address issues of data quality and relevance. The self-serve infrastructure (3) enables efficient data product creation and consumption. Finally, federated governance (4) ensures that this decentralized system remains cohesive and compliant.'*
+'*These principles work together to create a data ecosystem that is scalable, flexible, and aligned with business needs. The domain-oriented approach (1) and data as a product mindset (2) address issues of data quality and relevance. The self-serve infrastructure (3) enables efficient data product creation and consumption. Finally, federated governance (4) ensures that this decentralized system remains cohesive and compliant.'*
 
 ---
 
@@ -218,7 +224,7 @@ Domain-Oriented data relies heavily on the knowledge and input of domain experts
 *   **Shifting data ownership**: From centralized teams to domain experts who understand 
 the data best, leading to better data quality and governance.
 
-*   **Data Modeling:**: From generic data models that try to accommodate all use cases.
+*   **Data Modeling**: From generic data models that try to accommodate all use cases.
    to specific data models that reflect the unique needs and language of each domain.
 
 
@@ -241,8 +247,10 @@ the data best, leading to better data quality and governance.
 #### Organisational and cultural shifts
 *'A distributed approach promotes scalability, agility, and data quality by empowering domain teams and fostering a data-driven culture. Data mesh recognizes that data is not a monolithic entity but rather a collection of interconnected, domain-specific datasets that can be best managed by those closest to them.*'
 
+--
 
-- not only a system architectical shift. Far from it. Everyone participates. Benifits and contributes.
+### Nb
+Not only an architectical shift. Far from it. Everyone participates. Benifits and contributes.
 
 ---
 
@@ -264,11 +272,13 @@ JP Morgan | Saxo Bank | Intuit | Paypal
 
 Paypal;
 
-    '*Scalability: PayPal started with 6 data products and rapidly expanded to about 40, with plans to add many more. This demonstrates the scalability of the data mesh approach*'
+'*Scalability: PayPal started with 6 data products and rapidly expanded to about 40, with plans to add many more. This demonstrates the scalability of the data mesh approach*'
 
-    '*Better regulatory compliance and data security: The decentralized nature of data mesh allowed for improved compliance and security measures*'
+--
 
-    '*Autonomy for data domains: The data mesh provided greater autonomy for different data domains within PayPal, allowing them to manage their own data pipelines*'
+'*Better regulatory compliance and data security: The decentralized nature of data mesh allowed for improved compliance and security measures*'
+
+'*Autonomy for data domains: The data mesh provided greater autonomy for different data domains within PayPal, allowing them to manage their own data pipelines*'
 
 ---
 
@@ -283,13 +293,15 @@ Paypal;
 --
 
 1. **Mindset Shift:**
-   - From viewing data as a byproduct to treating it as a valuable product
-   - Embracing decentralization and domain ownership
+    - From viewing data as a byproduct to treating it as a valuable product
+    - Embracing decentralization and domain ownership
+
+--
 
 2. **Skill Development:**
-   - Data literacy across the organization
-   - Domain teams need to develop data management and engineering skills
-   - Platform teams need to shift focus from control to enablement
+    - Data literacy across the organization
+    - Domain teams need to develop data management and engineering skills
+    - Platform teams need to shift focus from control to enablement
 
 --
 
@@ -335,9 +347,9 @@ Paypal;
 
 
 ### Future is here
-'*Every member will be limited only by discovery, vision, taste, curiosity, creativity.*'
+'*Every member will be limited only by curiosity, vision, taste, and creativity.*'
 
----
+--
 
 If data products are not available when AI-powered tools become commonplace and potentially customized for specific companies, several significant challenges and missed opportunities could arise:
 
@@ -373,13 +385,10 @@ Talent retention issues: Data scientists and AI specialists may be frustrated by
 
 Missed cross-functional opportunities: The absence of data products could limit the ability of AI tools to identify and leverage cross-functional insights and opportunities within the organization.
 
---
 
 
 
-- [NoteboolLM](https://notebooklm.google.com/notebook/4f655dcf-38ad-4646-9b39-b5c7d16f24c4?original_referer=https:%2F%2Fblog.google%23&pli=1)
 
-- [Generated podcast](https://notebooklm.google.com/notebook/4f655dcf-38ad-4646-9b39-b5c7d16f24c4/audio)
 
 ---
 
