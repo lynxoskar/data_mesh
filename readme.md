@@ -1,9 +1,15 @@
-#This is a presentation of data mesh, data product thinking in progress. 
-    tools used:
-     [Perplexity](https://www.perplexity.ai/)
-     [NotebookLM](https://notebooklm.google.com/)
-    
-    presentation:
-        file: presentation.md
-        [vscode-reveal](https://www.evilznet.com/vscode-reveal/#/)
+# Presentation of data mesh, data product thinking in progress. 
+
+### Sources:
+
+   - [Perplexity](https://www.perplexity.ai/)
+   - [NotebookLM](https://notebooklm.google.com/)
+
+### Presentation:
+
+   - [presentation](./presentation.md)
+   - [sources](./sources/)
+   - [tool]((https://www.evilznet.com/vscode-reveal/#/))
+
+
 
