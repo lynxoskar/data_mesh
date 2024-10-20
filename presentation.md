@@ -14,9 +14,12 @@ title: "Data Mesh"
 
 
 
+---
+
+
 # Systems
 ### System of records. 
-### Data Lakes and Pipelines. 
+### Data Pipelines. 
 
 Mutable.
     + atomic 
@@ -96,6 +99,8 @@ This distributed approach promotes scalability, agility, and data quality by emp
     3. Self-Serve Data Infrastructure 
     4. Federated Computational Governance
 
+![System](./pics/4_principles.webp)
+
 --
 
 #### 1. Domain-Oriented Ownership 'Tackling complexity in the heart of data...'
@@ -128,13 +133,14 @@ This distributed approach promotes scalability, agility, and data quality by emp
         - complex or simple
         - linage 
         - set, lot or appendstucture (deduplicated)
-        - events
+        - life times events
+        - 
         - tombstoning / inits
     - Automated enforcement
     - Access and security
-    - Strikes balance 
+    - Balance between centralized control and domain autonomy
     
---
+---
 
 
 # Future
