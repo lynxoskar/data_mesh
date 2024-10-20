@@ -334,19 +334,48 @@ Paypal;
 ---
 
 
-
-
-
-
-
-
-
-
+### Future is here
+'*Every member will be limited only by discovery, vision, taste, curiosity, creativity.*'
 
 ---
 
-# Future
-- Data from id:links. Data + metadata interpreted by ai. Every consumer will be limited only by finding, vision,  taste, curiosity, creativity.
+If data products are not available when AI-powered tools become commonplace and potentially customized for specific companies, several significant challenges and missed opportunities could arise:
+
+--
+
+Inefficient AI implementations: Without proper data products, AI tools may struggle to access and utilize relevant information, resulting in suboptimal performance and less accurate insights.
+
+--
+
+Increased data silos: The absence of data products could exacerbate existing data silos, making it difficult for AI tools to provide a comprehensive view of the organization's data landscape.
+
+--
+
+Missed innovation opportunities: AI-powered tools often uncover unexpected insights and patterns. Without accessible data products, companies may miss out on these potential innovations.
+
+--
+
+Reduced agility: The inability to quickly access and analyze data through AI tools could slow down a company's ability to respond to market changes or customer needs.
+
+--
+
+Compliance and governance risks: Without structured data products, ensuring data quality, lineage, and compliance with regulations could become more challenging when using AI tools.
+
+--
+
+Difficulty in scaling AI initiatives: As AI tools become more sophisticated, the lack of data products could limit a company's ability to scale its AI initiatives across different departments or use cases.
+
+--
+
+Talent retention issues: Data scientists and AI specialists may be frustrated by the lack of accessible, high-quality data, potentially leading to retention problems.
+
+--
+
+Missed cross-functional opportunities: The absence of data products could limit the ability of AI tools to identify and leverage cross-functional insights and opportunities within the organization.
+
+--
+
+
 
 - [NoteboolLM](https://notebooklm.google.com/notebook/4f655dcf-38ad-4646-9b39-b5c7d16f24c4?original_referer=https:%2F%2Fblog.google%23&pli=1)
 
@@ -354,32 +383,21 @@ Paypal;
 
 ---
 
-### Data product req
-    Discoverable
-    Addressable (no place)
-    Self describing 
-    Owned and taken cared of (cross functional?)
+### Appendix; components
 
-### Thesaurus
-    Lineage 
-    Quality 
-    Governance
+Data Governance systems
 
-### data certainty 
+Data Catalogue
 
+Storage
 
+Execution Governance 
 
-### Components
+Execution System
 
-    Data Governance system
-    Data Catalogue
-    Storage
+--
 
-    Execution Governance 
-    Execution System
-
-
-### Companies providing platforms/services for complete immersion
+#### Companies providing platforms/services for complete immersion
 
 [Starburst](https://www.starburst.io/)
     - built on OS. 
@@ -391,33 +409,37 @@ Paypal;
 [K2View](https://www.k2view.com/)
     - data as product management with domain-oriented ownership
     - self service
+--
 
 [DataBricks](https://www.databricks.com/)
-    -   Databricks
-        Databricks is a unified data analytics platform built on Apache Spark.
-    Key features:
-        Lakehouse architecture combining data lake and data warehouse capabilities
-        Strong support for data engineering, data science, and machine learning workflows
-        Delta Lake for ACID transactions on data lakes
-        Collaborative notebooks for data analysis and visualization
-        Target users: Data engineers, data scientists, and analysts in organizations dealing with big data and advanced analytics
-        Snowflake
+is a unified data analytics platform built on Apache Spark.
+Key features:
+Lakehouse architecture combining data lake and data warehouse capabilities
+Strong support for data engineering, data science, and machine learning workflows
+Delta Lake for ACID transactions on data lakes
+Collaborative notebooks for data analysis and visualization
+        
+--
 
 [Danodo](https://www.denodo.com/)
 
+[Data Mesh Manager](https://www.datamesh-manager.com/)
+
+--
+
 [Snowflake](www.snowflake.com/)
     -   Snowflake is a cloud-based data warehousing platform.
-    Key features:
+        Key features:
         Separation of storage and compute for scalability
         Support for structured and semi-structured data
         Easy data sharing and collaboration
         Strong SQL support and optimization for analytics queries
         Target users: Business analysts, data analysts, and organizations focused on business intelligence and data warehousing
 
-[Data Mesh Manager](https://www.datamesh-manager.com/)
+---
 
 
-### Data Catalogues (data, metadata, events)
+#### Data Catalogues (data, metadata, events)
 [Linkedins Datahub](https://datahubproject.io/)
 
 [Apache Atlas](https://atlas.apache.org/#/)
@@ -427,16 +449,17 @@ Paypal;
 [Netflix Metacat](https://github.com/Netflix/metacat)
 [info](https://netflixtechblog.com/metacat-making-big-data-discoverable-and-meaningful-at-netflix-56fb36a53520)
 
+---
 
-### Workflow orchestration systems, execution governance. 
-[estuary](https://estuary.dev/)
-        - Estuary is a real-time data operations platform.
-    Key features:
-        Real-time data integration and ETL
-        Support for streaming and batch data processing
-        Schema evolution and data quality management
-        Open-source core (Flow) with cloud-hosted option
-        Target users: Data engineers and organizations dealing with real-time data streams and complex data pipelines
+#### Workflow orchestration systems, execution governance. 
+[Estuary](https://estuary.dev/) is a real-time data operations platform.
+Real-time data integration and ETL
+Support for streaming and batch data processing
+Schema evolution and data quality management
+Open-source core (Flow) with cloud-hosted option
+Target users: Data engineers and organizations dealing with real-time data streams and complex data pipelines
+
+--
 
 [Airflow](https://airflow.apache.org/)
 
@@ -453,12 +476,9 @@ Paypal;
 [Argo workflows](https://argoproj.github.io/workflows/)
 
 
-[Differential Dataflow](https://github.com/timelydataflow/differential-dataflow/blob/master/differentialdataflow.pdf)
+---
 
-
-
-
-[Future](https://notebooklm.google.com/notebook/4f655dcf-38ad-4646-9b39-b5c7d16f24c4/audio?pli=1)
+# FIN
 
 
 
