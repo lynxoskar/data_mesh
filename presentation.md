@@ -266,11 +266,11 @@ Not only an architectical shift. Far from it. Everyone participates. Benifits an
 
 JP Morgan | Saxo Bank | Intuit | Paypal
 
-[many](./sources/)
+[many](https://github.com/lynxoskar/data_mesh/blob/main/sources/perplexity_success_stories.md)
 
 --
 
-Paypal;
+[Paypal](https://github.com/lynxoskar/data_mesh/blob/main/sources/perplexity_success_paypal.md)
 
 '*Scalability: PayPal started with 6 data products and rapidly expanded to about 40, with plans to add many more. This demonstrates the scalability of the data mesh approach*'
 
