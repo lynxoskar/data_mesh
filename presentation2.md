@@ -61,7 +61,6 @@ Traditional pipelines with centralized data platforms. Data flows through a seri
 --
 
 **Data Lake Characteristics:**
-
 - Centralized repository storing raw data in generic format
 - Decouples data from its place of origin
 - Centralized team maintains and manages the data repository

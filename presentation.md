@@ -13,7 +13,7 @@ title: "Data Mesh"
 ---
 
 ## Systems
-**System of records** :'*transactional operational systems*'
+**System of record** :'*transactional operational systems*'
 
 **Data Lake** : '*traditional data pipelines systems*'
 
@@ -34,7 +34,7 @@ title: "Data Mesh"
 ---
 
 ### System of records 
-Systems of records (SOR) are traditional, centralized systems that serve as the authoritative source for specific data and/or functions within an organization. **Operative flow**
+Systems of Record (SOR) are traditional, centralized systems that serve as the authoritative source for specific data and functions within an organization. **Operative flow**
 
 --
 
@@ -45,7 +45,7 @@ Systems of records (SOR) are traditional, centralized systems that serve as the 
 *   Consistency - single source of thruth   
 *   Slow change - system modeling creates bottlenecks
 *   No inherent change tracking 
-*   Limited selfservice, discoverebility.*  
+*   Limited selfservice, discoverebility.  
 
 ---
 
@@ -55,11 +55,11 @@ Traditional pipelines with centralized data platform. Data flowing through a ser
 --
 
 **Lakes cont.**
-*  Centralized repository storing RAW data in as native format as possible. 
-*  Decupled place from data. 
-*  Centralized team maintains and manages data repository
+*  Centralized repository storing raw data in generic format. 
+*  Decouples data from its place of origin 
+*  Centralized team maintains and manages the data repository
 *  Excel at handling large volumes of data
-*  Struggles with diversity of data sources (ingress) and shifting use cases
+*  Struggles with diversity of data sources and shifting use cases
 
 ---
 
@@ -80,7 +80,7 @@ Traditional pipelines with centralized data platform. Data flowing through a ser
 --
 
 ### Processing Model:
-- **Systems of Record:** Often rely on in-place updates and transactions
+- **Systems of Record:** Rely on in-place updates and transactions
 - **Data Pipelines:** Use functional transformations on immutable data streams
 
 --
@@ -121,7 +121,7 @@ Traditional pipelines with centralized data platform. Data flowing through a ser
 --
 
 **Bounded context**:
-Data is organized around specific business domains, each with its own clearly defined boundaries. This approach helps in managing complexity by breaking down large systems into smaller, more manageable parts.
+Data is organized around specific business domains, each with its own clearly defined boundaries. Managing complexity by breaking down large systems into smaller, more manageable parts.
 
 --
 
@@ -131,7 +131,7 @@ Domain-Oriented data emphasizes using a common language shared by both technical
 --
 
 **Domain Experts:**
-Domain-Oriented data relies heavily on the knowledge and input of domain experts, ensuring that data models and structures accurately reflect the business reality
+Domain-Oriented data relies on domain experts, ensuring that data models and structures accurately reflect the business reality
 
 --
 
@@ -153,33 +153,33 @@ Domain-Oriented data relies heavily on the knowledge and input of domain experts
 --
 
 #### Data as a product cont
-- **Product thinking** Data gets a vision, strategy, and roadmap. Ownership enhances stewardship, innovation and experimentation. 
-- **Push vs pull** record of change. Cultural shift;  Ownership gets claimed - not assigned. Deliver value; not complete assignments.
+- **Product thinking** Data products have a vision, strategy, and roadmap. Ownership enhances stewardship, innovation, and experimentation. 
+- **Cultural Shift:** Ownership gets claimed, not assigned. Focus on delivering value, not completing assignments.
 
 --
 
 #### Data as a product cont
-- **Strategic asset**: Core product. Not a byproduct of operations. Data products gets a vision, strategy and roadmap.
-- **Quality focus**: Usable, understandable, correct, on-time, complete.
-- **Lifecycle Management**: Data products are managed through their entire lifecycle, from creation to retirement
+- **Strategic asset**: Data is a core product, not a byproduct of operations.
+- **Quality focus**: Data products are usable, understandable, correct, timely, and complete.
+- **Lifecycle Management**: Data products are managed through their entire lifecycle, from creation to retirement.
     
 ---
 
 #### 3. Self-Serve Data Infrastructure 
 
-*'This principle aims to provide a platform that enables domain teams to easily create, maintain, and use data products.'*
+*'This principle aims to provide a platform that enables domain teams to easily create, maintain and use data products.'*
 
 --
 
-- **One Platform**: Unified platform provides domain-agnostic tools and systems. Empowering users to autonomously develop and manage products.
+- **Unified Platform:** Provides domain-agnostic tools and systems, empowering users to autonomously develop and manage products.
 
 --
 
-- **Ease of Use**: Low barrier for adoption, allowing to find, understand and manage data products. Affordance build in.
+- **Ease of Use:** Low barrier for adoption, allowing users to find, understand, and manage data products with built-in affordance.
 
 --
 
-- **Virtualization**: Data is virtualized rather than centralized. Adressable, decentralized. Not a place. 
+- **Virtualization:** Data is virtualized rather than centralized—addressable and decentralized.
 
 --
 
@@ -196,12 +196,12 @@ Domain-Oriented data relies heavily on the knowledge and input of domain experts
 - **Global Standards**: Establishes organization-wide standards for data. Required metadata and conventions.
         
         namespace: prod | preprod | test
-        owner
+        owner: group | person
         linage: data & execution
         format: structured | unstructured,         
-            simple | complex 
-            lot | set | appendstructure
-        life time events
+        complexity: simple | complex 
+        structure:  lot | set | appendstructure
+        lifecycle events
         tombstoning | inits
         authorization/authentication
 
@@ -216,24 +216,22 @@ Domain-Oriented data relies heavily on the knowledge and input of domain experts
 ---
 
 #### Summary:
-'*These principles work together to create a data ecosystem that is scalable, flexible, and aligned with business needs. The domain-oriented approach (1) and data as a product mindset (2) address issues of data quality and relevance. The self-serve infrastructure (3) enables efficient data product creation and consumption. Finally, federated governance (4) ensures that this decentralized system remains cohesive and compliant.'*
+*These principles work together to create a data ecosystem that is scalable, flexible, and aligned with business needs. The domain-oriented approach and data-as-a-product mindset address issues of data quality and relevance. The self-serve infrastructure enables efficient data product creation and consumption. Federated governance ensures that this decentralized system remains cohesive and compliant.*
 
 ---
 
 #### DataMesh vs Data Lakes
-*   **Shifting data ownership**: From centralized teams to domain experts who understand 
-the data best, leading to better data quality and governance.
+*   **Shifting data ownership**: From centralized teams to domain experts, leading to better data quality and governance.
 
-*   **Data Modeling**: From generic data models that try to accommodate all use cases.
-   to specific data models that reflect the unique needs and language of each domain.
+*   **Data Modeling**: From generic models accommodating all use cases to specific models reflecting each domain's unique needs and language.
 
 
 --
 
 #### DataMesh vs Data Lakes cont
-*   **Decoupling data pipelines**: From centralized control and generic approaches into smaller, domain-specific units, allowing for more agile development and deployment of data products. Allowing for more domain-specific innovation and experimentation
+*   **Decoupling data pipelines**: From centralized control into smaller, domain-specific units, allowing for agile development and domain-specific innovation.
 
-*   **Emphasizing data as a product**: From central team responsible for data quality to  domain teams focusing on delivering value to data consumers through high-quality, discoverable data products.
+*   **Emphasizing data as a product**: From central team responsible for data quality to domain teams focusing on delivering high-quality, discoverable data products.
 
 --
 
@@ -245,7 +243,7 @@ the data best, leading to better data quality and governance.
 
 
 #### Organisational and cultural shifts
-*'A distributed approach promotes scalability, agility, and data quality by empowering domain teams and fostering a data-driven culture. Data mesh recognizes that data is not a monolithic entity but rather a collection of interconnected, domain-specific datasets that can be best managed by those closest to them.*'
+*'A distributed approach promotes scalability, agility and data quality by empowering domain teams and fostering a data-driven culture. Data mesh recognizes that data is not a monolithic entity but rather a collection of interconnected, domain-specific datasets that can be best managed by those closest to them.*'
 
 --
 
@@ -284,7 +282,7 @@ JP Morgan | Saxo Bank | Intuit | Paypal
 
 ### Culture Mind shift
 
-*'It's important to note that data mesh adoption is an evolving process. While the technology is largely available, the greater challenge lies in the cultural and organizational shifts required to implement a successful data mesh. Many organizations are taking an incremental approach, starting with specific data products and gradually expanding their mesh over time'*
+*'Data Mesh adoption is an evolving process. While the technology is largely available, the greater challenge lies in the cultural and organizational shifts required for successful implementation. Many organizations are taking an incremental approach, starting with specific data products and gradually expanding their mesh over time.'*
 
 --
 
@@ -292,6 +290,7 @@ JP Morgan | Saxo Bank | Intuit | Paypal
 
 --
 
+### Key Factors for Successful Transition:
 1. **Mindset Shift:**
     - From viewing data as a byproduct to treating it as a valuable product
     - Embracing decentralization and domain ownership
@@ -349,11 +348,10 @@ JP Morgan | Saxo Bank | Intuit | Paypal
 ### Future is here
 '*Every member will be limited only by curiosity, vision, taste, and creativity.*'
 
---
-
-If data products are not available when AI-powered tools become commonplace and potentially customized for specific companies, several significant challenges and missed opportunities could arise:
 
 --
+
+### Importance of Data Products in the Age of AI:
 
 Inefficient AI implementations: Without proper data products, AI tools may struggle to access and utilize relevant information, resulting in suboptimal performance and less accurate insights.
 
@@ -394,96 +392,122 @@ Missed cross-functional opportunities: The absence of data products could limit 
 
 ### Appendix; components
 
-Data Governance systems
 
-Data Catalogue
+**Key Components:**
 
-Storage
-
-Execution Governance 
-
-Execution System
+- **Data Governance Systems**
+- **Data Catalogs**
+- **Storage Solutions**
+- **Execution Governance**
+- **Execution Systems**
 
 --
 
-#### Companies providing platforms/services for complete immersion
+#### Companies Providing Comprehensive Platforms
 
 [Starburst](https://www.starburst.io/)
-    - built on OS. 
+    - Built on open-source technologies
+    - Provides analytics engine for Data Mesh 
 
 [atlan](https://atlan.com/?ref=/p/data-catalog-data-mesh/)
-    - data catalog
-    - metadata man
+    - Data catalog and metadata management
+    - Facilitates data discovery and collaboration
 
 [K2View](https://www.k2view.com/)
-    - data as product management with domain-oriented ownership
-    - self service
+    - Data-as-product management with domain-oriented ownership
+    - Offers self-service capabilities
+
 --
 
 [DataBricks](https://www.databricks.com/)
-is a unified data analytics platform built on Apache Spark.
-Key features:
-Lakehouse architecture combining data lake and data warehouse capabilities
-Strong support for data engineering, data science, and machine learning workflows
-Delta Lake for ACID transactions on data lakes
-Collaborative notebooks for data analysis and visualization
+    - Unified data analytics platform built on Apache Spark 
+    - Lakehouse architecture combining data lake and data warehouse capabilities
+    - Supports data engineering, data science, and machine learning workflows
+    - Delta Lake for ACID transactions on data lakes
+    - Collaborative notebooks for data analysis and visualization
         
 --
 
 [Danodo](https://www.denodo.com/)
+    - Data virtualization and integration platform
+    - Enables real-time data access without replication
 
 [Data Mesh Manager](https://www.datamesh-manager.com/)
+    - Specialized tools for managing Data Mesh architectures
+    - Focuses on governance and domain management
 
 --
 
 [Snowflake](www.snowflake.com/)
-    -   Snowflake is a cloud-based data warehousing platform.
-        Key features:
-        Separation of storage and compute for scalability
-        Support for structured and semi-structured data
-        Easy data sharing and collaboration
-        Strong SQL support and optimization for analytics queries
-        Target users: Business analysts, data analysts, and organizations focused on business intelligence and data warehousing
+    - Cloud-based data warehousing platform
+    - Separation of storage and compute for scalability
+    - Supports structured and semi-structured data
+    - Easy data sharing and collaboration
+    - Strong SQL support optimized for analytics queries
 
 ---
 
 
 #### Data Catalogues (data, metadata, events)
 [Linkedins Datahub](https://datahubproject.io/)
+    - Open-source metadata platform
+    - Facilitates data discovery and lineage tracking
 
 [Apache Atlas](https://atlas.apache.org/#/)
+    - Open-source metadata management and governance
+    - Integrates with Hadoop ecosystem
 
 [Amundsen](https://www.amundsen.io/)
+    - Data discovery and metadata engine
+    - Developed by Lyft for data cataloging
+
 
 [Netflix Metacat](https://github.com/Netflix/metacat)
+    - Unified metadata management system
+    - Makes big data discoverable and meaningful
+
 [info](https://netflixtechblog.com/metacat-making-big-data-discoverable-and-meaningful-at-netflix-56fb36a53520)
 
 ---
 
 #### Workflow orchestration systems, execution governance. 
-[Estuary](https://estuary.dev/) is a real-time data operations platform.
-Real-time data integration and ETL
-Support for streaming and batch data processing
-Schema evolution and data quality management
-Open-source core (Flow) with cloud-hosted option
-Target users: Data engineers and organizations dealing with real-time data streams and complex data pipelines
+[Estuary](https://estuary.dev/)
+    - Real-time data operations platform
+    - Supports real-time data integration and ETL
+    - Handles streaming and batch data processing
+    - Manages schema evolution and data quality
 
 --
 
 [Airflow](https://airflow.apache.org/)
+    - Platform to programmatically author, schedule, and monitor workflows
+    - Widely used for orchestrating complex data pipelines
 
 [Dagster](https://dagster.io/)
+    - Data orchestrator for machine learning, analytics, and ETL
+    - Emphasizes software-defined data assets
 
 [Luigi](https://github.com/spotify/luigi)
+    - Python module for building complex pipelines
+    - Handles dependency resolution and workflow management
+
+--
 
 [Kubelow](https://www.kubeflow.org/)
+    - Machine learning toolkit for Kubernetes
+    - Facilitates deployment of scalable ML workflows
 
 [Prefect](https://www.prefect.io/)
+    - Modern workflow orchestration tool
+    - Focuses on dataflow and task scheduling
 
 [Netflix, meastro](https://github.com/Netflix/maestro)
+    - Workflow orchestrator for big data jobs
+    - Manages job dependencies and scheduling
 
 [Argo workflows](https://argoproj.github.io/workflows/)
-
+    - Container-native workflow engine for Kubernetes
+    - Executes DAGs of tasks using Kubernetes resources
 
 ---
 
