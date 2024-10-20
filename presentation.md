@@ -1,5 +1,5 @@
 ---
-theme: black  
+theme: league  
 
 
 title: "Data Mesh"
