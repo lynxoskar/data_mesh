@@ -128,10 +128,6 @@ Data is organized around specific business domains, each with its own clearly de
 **Unambigious language** 
 Domain-Oriented data emphasizes using a common language shared by both technical and business teams within a specific domain. This language is reflected in the data models, naming conventions, and metadata.
 
---
-
-**Domain Experts:**
-Domain-Oriented data relies on domain experts, ensuring that data models and structures accurately reflect the business reality
 
 --
 
