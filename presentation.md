@@ -14,15 +14,17 @@ title: "Data Mesh"
 
 # Systems
 ### System of records. 
-### Data Pipelines. 
+### Data Lakes *'traditional data pipelines'*
+### Data Meshes *'decentralized domain
 
 ---
+
 ## System of records [SOR]
+    Systems of records (SOR) are traditional, centralized databases that serve as the authoritative source for specific data elements or functions within an organization.
 
     + Mutable - Deduplicated data
     + Atomic operations - transactional    
-    + transactional
-    + 
+    
 
     
     - Place oriented. (often the a particular system)
@@ -58,7 +60,7 @@ This distributed approach promotes scalability, agility, and data quality by emp
     + Governance; policies, data properties
     + Selfservice / Discoverability
     + Focus on value
-
+[rich hikey](./sources/perplexity_placeoriented_vs_immutable.md)
 ---
 
 ### Data Great devide
@@ -92,7 +94,7 @@ This distributed approach promotes scalability, agility, and data quality by emp
 ---
 
 ### Data Mesh Principles
-    1. Domain-Oriented Decentralized Data Ownership and Architecture
+    1. Domain-Oriented Decentralized Data - Ownership and Architecture
     2. Data as a Product
     3. Self-Serve Data Infrastructure 
     4. Federated Computational Governance
@@ -101,7 +103,12 @@ This distributed approach promotes scalability, agility, and data quality by emp
 
 --
 
-#### 1. Domain-Oriented Ownership 'Tackling complexity in the heart of data...'
+#### 1. Domain-Oriented Data 'Tackling complexity in the heart of data...'
+    *'The Domain-Oriented approach, rooted in DDD principles, aims to create a more flexible, scalable, and business-aligned data architecture. It empowers domain teams to take ownership of their data, leading to more accurate, relevant, and usable data products across the organization. This approach addresses many of the challenges faced by traditional, centralized data management systems, particularly in large, complex organizations with diverse data needs.*
+--
+
+## 1. DDD - cont.
+
     - **eric evans book** [domain driven design](https://fabiofumarola.github.io/nosql/readingMaterial/Evans03.pdf)
         **bounded context**; same id might have different associated data depending on context.
         **unambigious language** clearly defined terms within context. 
@@ -139,7 +146,12 @@ This distributed approach promotes scalability, agility, and data quality by emp
     - Balance between centralized control and domain autonomy
     
 ---
+# Organisational and cultural shifts
 
+    - not only a system architectical shift. Far from it. Everyone participates. Benifits and contributes.
+
+
+---
 
 # Future
 - Data from id:links. Data + metadata interpreted by ai. Every consumer will be limited only by finding, vision,  taste, curiosity, creativity.
@@ -184,7 +196,7 @@ This distributed approach promotes scalability, agility, and data quality by emp
 
 [Starburst](https://www.starburst.io/)
     - built on OS. 
-    
+
 [atlan](https://atlan.com/?ref=/p/data-catalog-data-mesh/)
     - data catalog
     - metadata man
