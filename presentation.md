@@ -12,19 +12,17 @@ title: "Data Mesh"
 
 ---
 
-
-
----
-
-
 # Systems
 ### System of records. 
 ### Data Pipelines. 
 
-Mutable.
-    + atomic 
-    + deduplication
+---
+## System of records [SOR]
+
+    + Mutable - Deduplicated data
+    + Atomic operations - transactional    
     + transactional
+    + 
 
     
     - Place oriented. (often the a particular system)
@@ -183,6 +181,10 @@ This distributed approach promotes scalability, agility, and data quality by emp
 
 
 ### Companies providing platforms/services for complete immersion
+
+[Starburst](https://www.starburst.io/)
+    - built on OS. 
+    
 [atlan](https://atlan.com/?ref=/p/data-catalog-data-mesh/)
     - data catalog
     - metadata man

@@ -6,13 +6,13 @@
 
 * **Purpose:** Systems of record primarily serve operational needs. They are **designed to capture, store, and manage transactional data that is essential for running the business.** This data is often structured and relational, residing in databases behind business capabilities served with microservices.
 * **Focus:** SORs prioritize data accuracy, consistency, and availability for real-time operational use.
-* **Examples:** Customer relationship management (CRM) systems, enterprise resource planning (ERP) systems, order management systems.
+
 
 ### Data Products
 
 * **Purpose:** Data products are **designed for analytical consumption**, aiming to **provide insights, support decision-making, and enable data-driven applications.** They focus on historical and aggregated views of business facts over time, often tailored to specific use cases. 
 * **Focus:** Data products prioritize data quality, discoverability, understandability, and usability for consumers such as data scientists and analysts.
-* **Examples:** Churn forecasting models, customer segmentation datasets, product recommendation engines.
+
 
 ### Pros and Cons
 
