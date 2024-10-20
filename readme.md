@@ -9,7 +9,7 @@
 
    - [presentation](./presentation.md)
    - [sources](./sources/)
-   - [tool]((https://www.evilznet.com/vscode-reveal/#/))
+   - [tool](https://www.evilznet.com/vscode-reveal/)
 
 
 
