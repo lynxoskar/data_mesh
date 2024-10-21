@@ -1,8 +1,6 @@
-
-
 ---
-
-theme: black  
+# league beige night serif solarized sky
+theme: league  
 
 title: "Data Mesh"
 
@@ -393,6 +391,8 @@ Traditional pipelines with centralized data platforms. Data flows through a seri
   - Delta Lake for ACID transactions on data lakes
   - Collaborative notebooks for data analysis and visualization
 
+--
+
 - **Denodo**
 
   - Data virtualization and integration platform
@@ -427,6 +427,8 @@ Traditional pipelines with centralized data platforms. Data flows through a seri
   - Open-source metadata management and governance
   - Integrates with Hadoop ecosystem
 
+--
+
 - **Amundsen**
 
   - Data discovery and metadata engine
@@ -460,6 +462,8 @@ Traditional pipelines with centralized data platforms. Data flows through a seri
   - Data orchestrator for machine learning, analytics, and ETL
   - Emphasizes software-defined data assets
 
+--
+
 - **Luigi**
 
   - Python module for building complex pipelines
@@ -469,6 +473,8 @@ Traditional pipelines with centralized data platforms. Data flows through a seri
 
   - Machine learning toolkit for Kubernetes
   - Facilitates deployment of scalable ML workflows
+
+--
 
 - **Prefect**
 
