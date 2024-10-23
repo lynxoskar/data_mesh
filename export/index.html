@@ -4,61 +4,169 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Reveal JS presentation</title>
+  <title>Data Mesh</title>
 
-  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-  <meta name="author" content="Hakim El Hattab">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="libs/reveal.js/4.3.1/reset.css">
-  <link rel="stylesheet" href="libs/reveal.js/4.3.1/reveal.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- REVEAL CSS-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-  <!-- highlight Theme -->
+  <link rel="stylesheet" href="libs/reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="libs/reveal.js/dist/reveal.css">
   
-  <link rel="stylesheet" href="libs/highlight.js/11.3.1/styles/monokai.min.css">
-  
-	
-		
-	<link rel="stylesheet" href="libs/reveal.js/4.3.1/plugin/chalkboard/style.css">
-	
-	
-	
-  <link rel="stylesheet" href="libs/reveal.js/4.3.1/plugin/customcontrols/style.css">
-  
-	
-
-
-
-  <!-- Revealjs Theme -->
-  
-  <link rel="stylesheet" href="libs/reveal.js/4.3.1/theme/black.css" id="theme">
+  <link rel="stylesheet" href="libs/reveal.js/dist/theme/league.css" id="theme">
   
   
+  <!--
+  <link rel="stylesheet" href="libs/reveal.js/plugin/title-footer/title-footer-mod.css" />
+  -->
 
-  <link rel="stylesheet" href="libs/styles/tasklist.css">
-	<link rel="stylesheet" href="libs/styles/iota.css">
-	<link rel="stylesheet" href="libs/styles/layout.css">
+  <!-- MERMAID-->
+  <!--
+  <script src="libs/reveal.js/plugin/mermaid/mermaid.min.js"></script>
+  <style>
+  .mermaid {
+    font-size: 0.5em;
+  }
+  </style>
+  -->
+  
+  <style>
+    [class*=task-list-item] {
+      min-height: 22px;
+      margin-top: 6px!important;
+      margin-bottom: 6px!important;
+      padding-left: 0;
+      list-style: none;
+    }
 
+    [class*=task-list-item]>input:first-child {
+      position: absolute!important;
+      opacity: 0;
+      margin: 0;
+    }
 
-  <!-- Revealjs Theme -->
+    [class*=task-list-item]>label {
+      padding-left: 29px!important;
+      min-height: 22px;
+      line-height: 22px;
+      display: inline-block;
+      position: relative;
+      vertical-align: top;
+      margin-bottom: 0;
+      font-weight: 400;
+      cursor: pointer;
+    }
+
+    .task-list-item>input:first-child:checked+input[type=hidden]+label::before, .task-list-item>input:first-child:checked+label::before {
+      background-color: #ecf0f1;
+      border-color: #ecf0f1;
+    }
+
+    [class*=task-list-item]>input:first-child+input[type=hidden]+label::before, [class*=task-list-item]>input:first-child+label::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border: 1px solid #D3CFC8;
+      border-radius: 0;
+      margin-left: -29px;
+    }
+
+    [class*=task-list-item]>input:first-child:checked+input[type=hidden]+label::after, [class*=task-list-item]>input:first-child:checked+label::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 7px;
+      height: 10px;
+      border: 2px solid #fff;
+      border-left: none;
+      border-top: none;
+      transform: translate(7.75px,4.5px) rotate(45deg);
+      -ms-transform: translate(7.75px,4.5px) rotate(45deg);
+    }
+
+    .task-list-item>input:first-child:checked+input[type=hidden]+label::after, .task-list-item>input:first-child:checked+label::after {
+      border-bottom-color: #95a5a6;
+      border-right-color: #95a5a6;
+    }
+  </style>
+
+  <!-- Theme used for syntax highlighting of code -->
+  
+  <link rel="stylesheet" href="libs/reveal.js/plugin/highlight/Zenburn.css">
   
 
-   <!-- css list -->
-	
+  
+  
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'libs/reveal.js/dist/print/pdf.css' : 'libs/reveal.js/dist/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
 
-   
+  <style>
+     .line {
+      display: block;
+    }   
 
+    .line.focus {
+      background: #fdf6e3;
+      color: #657b83;
+    }
+
+    .reveal .slides section .fragment.current-only {
+      visibility: visible;
+      display: none;
+    }
+
+    .reveal .slides section .fragment.current-only.current-fragment {
+      display: block;
+    }
+
+    .line.focus {
+       opacity: 1.0;
+    } 
+
+    @media (device-width: 100vw) and (device-height: 100vh) {
+      .reveal pre code {
+        max-height: 50vh !important;
+      }
+    }
+
+    #logo img {
+      max-height: 3.5em;
+      max-width: none;
+      min-width: 50px;
+    }
+
+    .reveal .slides section .code-presenting-annotation {
+      color: white;
+      background: black;
+      padding: 0px 15px;
+      border-radius: 15px;
+      opacity: 0.75 !important;
+      font-size: 50% !important;
+    }
+  </style>
+  <script>
+    if (window.location.search.match(/print-pdf-now/gi)) {
+      window.print();
+    }
+  </script>
 </head>
 
 <body>
-
-   
+  
 
   <div class="reveal">
 
@@ -66,283 +174,1007 @@
     <div class="slides">
 
       
+  
+    <section >
+      <h1><a id="user-content-data-mesh" class="anchor" href="#data-mesh" aria-hidden="true"></a>Data Mesh</h1>
+<blockquote>
+<p><em>“Interestingly, several organizations claim to have implemented the data mesh ‘by accident,’ perceiving this paradigm as the natural evolution of data management.”</em><br>
+<a href="https://blog.owulveryck.info/2024/04/09/data-as-a-product-and-data-contract-an-evolutionary-approach-to-data-maturity.html">1</a></p>
+</blockquote>
 
+    </section>
+  
 
-    
+  
+    <section>
+      <section >
+        <h2><a id="user-content-systems" class="anchor" href="#systems" aria-hidden="true"></a>Systems</h2>
+<p><strong>System of Record:</strong> <em>Transactional operational systems</em></p>
+<p><strong>Data Lake:</strong> <em>Traditional data pipeline systems</em></p>
+<p><strong>Data Mesh:</strong> <em>Decentralized domain (cross-system) data products</em></p>
+
+      </section>
+      
         <section >
-            
-            <h2>Presentation of data mesh, data product thinking in progress.</h2>
-<h4>Sources:</h4>
+          <h3><a id="user-content-thesaurus-data" class="anchor" href="#thesaurus-data" aria-hidden="true"></a>Thesaurus Data</h3>
 <ul>
-<li><a href="https://www.perplexity.ai/">Perplexity</a></li>
-<li><a href="https://notebooklm.google.com/">NotebookLM</a></li>
+<li><strong>Place-Oriented:</strong> Mutable state. Place associated with value. Updates records in place.</li>
+<li><strong>Value-Oriented:</strong> Immutable values. Separated from place. Creates new versions or appends new data. Allows for decentralized use and value-based governance.</li>
 </ul>
-<h4>Presentation:</h4>
+<p><em>Example: Version control systems; Git (value-oriented) vs. SVN (place-oriented).</em></p>
+<p><a href="./sources/perplexity_placeoriented_vs_immutable.md">Rich Hickey on Place-Oriented Programming</a></p>
+
+        </section>
+      
+    </section>
+  
+
+  
+    <section>
+      <section >
+        <h3><a id="user-content-system-of-record" class="anchor" href="#system-of-record" aria-hidden="true"></a>System of Record</h3>
+<p>Systems of Record (SOR) are traditional, centralized systems that serve as the authoritative source for specific data and functions within an organization.</p>
+
+      </section>
+      
+        <section >
+          <p><strong>SOR Characteristics:</strong></p>
 <ul>
-<li><a href="./presentation.md">presentation</a></li>
-<li><a href="./sources/">sources</a></li>
-<li><a href="https://www.evilznet.com/vscode-reveal/">tool</a></li>
-</ul>
-<h4>Podcast:</h4>
-<ul>
-<li><a href="./sound/Datamesh.wav">file</a></li>
-<li><a href="https://notebooklm.google.com/notebook/4f655dcf-38ad-4646-9b39-b5c7d16f24c4/audio">onlinelink</a></li>
+<li>Place-oriented</li>
+<li>Mutable data—deduplicated</li>
+<li>Atomic operations—transactional</li>
+<li>Consistency—single source of truth</li>
+<li>Slow to change—system modeling creates bottlenecks</li>
+<li>No inherent change tracking</li>
+<li>Limited self-service and discoverability</li>
 </ul>
 
-            </section>
-    
+        </section>
+      
+    </section>
+  
+
+  
+    <section>
+      <section >
+        <h3><a id="user-content-data-lakes" class="anchor" href="#data-lakes" aria-hidden="true"></a>Data Lakes</h3>
+<p>Traditional pipelines with centralized data platforms. Data flows through a series of ingestion, cleansing, and transformation stages.</p>
+
+      </section>
+      
+        <section >
+          <p><strong>Data Lake Characteristics:</strong></p>
+<ul>
+<li>Centralized repository storing raw data in generic format</li>
+<li>Decouples data from its place of origin</li>
+<li>Centralized team maintains and manages the data repository</li>
+<li>Excels at handling large volumes of data</li>
+<li>Struggles with diversity of data sources and shifting use cases</li>
+</ul>
+
+        </section>
+      
+    </section>
+  
+
+  
+    <section>
+      <section >
+        <h3><a id="user-content-sor-vs-data-pipelines" class="anchor" href="#sor-vs-data-pipelines" aria-hidden="true"></a>SOR vs. Data Pipelines</h3>
+
+      </section>
+      
+        <section >
+          <p><strong>Representation:</strong></p>
+<ul>
+<li><strong>Systems of Record:</strong> Data as mutable objects or records in fixed locations</li>
+<li><strong>Data Pipelines:</strong> Data as immutable values flowing through transformations</li>
+</ul>
+
+        </section>
+      
+        <section >
+          <p><strong>Historical Context:</strong></p>
+<ul>
+<li><strong>Systems of Record:</strong> Often maintain only the current state</li>
+<li><strong>Data Pipelines:</strong> Naturally preserve historical data and changes over time</li>
+</ul>
+
+        </section>
+      
+        <section >
+          <p><strong>Processing Model:</strong></p>
+<ul>
+<li><strong>Systems of Record:</strong> Rely on in-place updates and transactions</li>
+<li><strong>Data Pipelines:</strong> Use functional transformations on immutable data streams</li>
+</ul>
+
+        </section>
+      
+        <section >
+          <p><strong>Data Quality and Governance:</strong></p>
+<ul>
+<li><strong>Systems of Record:</strong> May require complex mechanisms to ensure data integrity</li>
+<li><strong>Data Pipelines:</strong> Leverage immutability and functional transformations for better data quality control</li>
+</ul>
+
+        </section>
+      
+    </section>
+  
+
+  
+    <section>
+      <section >
+        <h2><a id="user-content-data-mesh" class="anchor" href="#data-mesh" aria-hidden="true"></a>Data Mesh</h2>
+<p><em>“Many data products fail because they are a solution in search of a problem—for example, ingesting a new dataset into the data platform because ‘someone’ will find it useful. Adding more data does not necessarily solve a customer’s problems or provide them with value.”</em></p>
+
+      </section>
+      
+        <section >
+          <h3><a id="user-content-data-mesh-principles" class="anchor" href="#data-mesh-principles" aria-hidden="true"></a>Data Mesh Principles</h3>
+<ol>
+<li><strong>Domain-Oriented Decentralized Data Ownership and Architecture</strong></li>
+<li><strong>Data as a Product</strong></li>
+<li><strong>Self-Serve Data Infrastructure</strong></li>
+<li><strong>Federated Computational Governance</strong></li>
+</ol>
+
+        </section>
+      
+        <section >
+          <p><img src="./pics/4_principles.webp" alt="System"></p>
+
+        </section>
+      
+    </section>
+  
+
+  
+    <section>
+      <section >
+        <h4><a id="user-content-1-domain-oriented-data" class="anchor" href="#1-domain-oriented-data" aria-hidden="true"></a>1. Domain-Oriented Data</h4>
+<p><em>Tackling complexity at the heart of data…</em></p>
+<ul>
+<li><strong>Bounded Context:</strong> Data is organized around specific business domains with clearly defined boundaries, managing complexity by breaking down large systems.</li>
+<li><strong>Unambiguous Language:</strong> Emphasizes using a common language shared by technical and business teams within a domain.</li>
+</ul>
+
+      </section>
+      
+        <section >
+          <ul>
+<li><strong>Domain Experts:</strong> Relies on domain experts to ensure data models accurately reflect business reality.</li>
+<li><strong>Decentralized Ownership:</strong> Each business domain takes responsibility for its own data, enhancing stewardship and data quality.</li>
+</ul>
+
+        </section>
+      
+        <section >
+          <ul>
+<li><strong>Alignment with Business Structure:</strong> Mirrors how businesses employ specialized teams for specific operations.</li>
+<li><strong>Improved Decision-Making:</strong> Placing data ownership closer to the source enhances data-driven decisions.</li>
+</ul>
+
+        </section>
+      
+    </section>
+  
+
+  
+    <section>
+      <section >
+        <h4><a id="user-content-2-data-as-a-product" class="anchor" href="#2-data-as-a-product" aria-hidden="true"></a>2. Data as a Product</h4>
+<p><em>This principle treats data as a valuable asset, applying product thinking to data management.</em></p>
+<ul>
+<li><strong>Product Thinking:</strong> Data products have a vision, strategy, and roadmap. Ownership enhances stewardship, innovation, and experimentation.</li>
+<li><strong>Strategic Asset:</strong> Data is a core product, not a byproduct of operations.</li>
+</ul>
+
+      </section>
+      
+        <section >
+          <ul>
+<li><strong>Quality Focus:</strong> Data products are usable, understandable, correct, timely, and complete.</li>
+<li><strong>Lifecycle Management:</strong> Managed through their entire lifecycle, from creation to retirement.</li>
+<li><strong>Cultural Shift:</strong> Ownership is claimed, not assigned. Focus on delivering value, not just completing assignments.</li>
+</ul>
+
+        </section>
+      
+    </section>
+  
+
+  
+    <section>
+      <section >
+        <h4><a id="user-content-3-self-serve-data-infrastructure" class="anchor" href="#3-self-serve-data-infrastructure" aria-hidden="true"></a>3. Self-Serve Data Infrastructure</h4>
+<p><em>This principle aims to provide a platform that enables domain teams to easily create, maintain, and use data products.</em></p>
+<ul>
+<li><strong>Unified Platform:</strong> Provides domain-agnostic tools and systems, empowering users to autonomously develop and manage products.</li>
+<li><strong>Ease of Use:</strong> Low barrier for adoption, allowing users to find, understand, and manage data products with built-in affordance.</li>
+</ul>
+
+      </section>
+      
+        <section >
+          <ul>
+<li><strong>Virtualization:</strong> Data is virtualized rather than centralized—addressable and decentralized.</li>
+<li><strong>Flexibility:</strong> The platform evolves based on domain requirements, balancing centralized infrastructure with domain-specific needs.</li>
+</ul>
+
+        </section>
+      
+    </section>
+  
+
+  
+    <section>
+      <section >
+        <h4><a id="user-content-4-federated-computational-governance" class="anchor" href="#4-federated-computational-governance" aria-hidden="true"></a>4. Federated Computational Governance</h4>
+<p><em>This principle ensures interoperability and consistency across the decentralized data ecosystem.</em></p>
+
+      </section>
+      
+        <section >
+          <ul>
+<li>
+<p><strong>Global Standards:</strong> Establishes organization-wide standards for data, including required metadata and conventions.</p>
+<pre><code>Namespace: prod | preprod | test
+Owner
+Lineage: data &amp; execution
+Format: structured | unstructured
+Complexity: simple | complex
+Structure: lot | set | append
+Lifecycle Events
+Tombstoning | Initializations
+Authorization/Authentication
+</code></pre>
+</li>
+</ul>
+<p>–</p>
+<ul>
+<li><strong>Automated Enforcement:</strong> Governance rules are computationally enforced, reducing manual oversight.</li>
+<li><strong>Balance:</strong> Strikes a balance between centralized control and domain autonomy.</li>
+</ul>
+
+        </section>
+      
+    </section>
+  
+
+  
+    <section >
+      <h4><a id="user-content-summary" class="anchor" href="#summary" aria-hidden="true"></a>Summary</h4>
+<p><em>These principles work together to create a data ecosystem that is scalable, flexible, and aligned with business needs. The domain-oriented approach and data-as-a-product mindset address issues of data quality and relevance. The self-serve infrastructure enables efficient data product creation and consumption. Federated governance ensures that this decentralized system remains cohesive and compliant.</em></p>
+
+    </section>
+  
+
+  
+    <section>
+      <section >
+        <h4><a id="user-content-data-mesh-vs-data-lakes" class="anchor" href="#data-mesh-vs-data-lakes" aria-hidden="true"></a>Data Mesh vs. Data Lakes</h4>
+<ul>
+<li><strong>Shifting Data Ownership:</strong> From centralized teams to domain experts, leading to better data quality and governance.</li>
+<li><strong>Data Modeling:</strong> From generic models accommodating all use cases to specific models reflecting each domain’s unique needs and language.</li>
+</ul>
+
+      </section>
+      
+        <section >
+          <ul>
+<li><strong>Decoupling Data Pipelines:</strong> From centralized control into smaller, domain-specific units, allowing for agile development and domain-specific innovation.</li>
+<li><strong>Emphasizing Data as a Product:</strong> From a central team responsible for data quality to domain teams delivering high-quality, discoverable data products.</li>
+<li><strong>Providing Self-Service Infrastructure:</strong> Empowers domain teams to manage their data products independently.</li>
+</ul>
+
+        </section>
+      
+    </section>
+  
+
+  
+    <section>
+      <section >
+        <h4><a id="user-content-organizational-and-cultural-shifts" class="anchor" href="#organizational-and-cultural-shifts" aria-hidden="true"></a>Organizational and Cultural Shifts</h4>
+<p><em>A distributed approach promotes scalability, agility, and data quality by empowering domain teams and fostering a data-driven culture. Data Mesh recognizes that data is not a monolithic entity but a collection of interconnected, domain-specific datasets best managed by those closest to them.</em></p>
+
+      </section>
+      
+        <section >
+          <p><strong>Note:</strong> This is not only an architectural shift. Everyone participates, benefits, and contributes.</p>
+
+        </section>
+      
+    </section>
+  
+
+  
+    <section >
+      <h4><a id="user-content-data-certitude" class="anchor" href="#data-certitude" aria-hidden="true"></a>Data Certitude</h4>
+<ul>
+<li><strong>Raw Data</strong></li>
+<li><strong>Curated Data:</strong> Accuracy, relevant representation.</li>
+<li><strong>Authoritative Data:</strong> Relevant, traceable, complete, consistent, documented.</li>
+</ul>
+<p><img src="./pics/data_certitude.svg" alt="Data Mesh Architecture"></p>
+
+    </section>
+  
+
+  
+    <section>
+      <section >
+        <h3><a id="user-content-success-stories" class="anchor" href="#success-stories" aria-hidden="true"></a>Success Stories</h3>
+<p><strong>Organizations Implementing Data Mesh:</strong></p>
+<ul>
+<li>JP Morgan</li>
+<li>Saxo Bank</li>
+<li>Intuit</li>
+<li>PayPal</li>
+</ul>
+<p><a href="https://github.com/lynxoskar/data_mesh/blob/main/sources/perplexity_success_stories.md">Additional Examples</a></p>
+
+      </section>
+      
+        <section >
+          <p><strong>PayPal Case Study:</strong></p>
+<ul>
+<li><em>Scalability:</em> Started with 6 data products and rapidly expanded to about 40, demonstrating the scalability of the Data Mesh approach.</li>
+<li><em>Regulatory Compliance and Security:</em> The decentralized nature allowed for improved compliance and security measures.</li>
+<li><em>Autonomy for Data Domains:</em> Provided greater autonomy for different data domains to manage their own data pipelines.</li>
+</ul>
+<p><a href="https://github.com/lynxoskar/data_mesh/blob/main/sources/perplexity_success_paypal.md">PayPal’s Success Story</a></p>
+
+        </section>
+      
+    </section>
+  
+
+  
+    <section>
+      <section >
+        <h3><a id="user-content-cultural-mind-shift" class="anchor" href="#cultural-mind-shift" aria-hidden="true"></a>Cultural Mind Shift</h3>
+<p><em>Data Mesh adoption is an evolving process. While the technology is largely available, the greater challenge lies in the cultural and organizational shifts required for successful implementation. Many organizations are taking an incremental approach, starting with specific data products and gradually expanding their mesh over time.</em></p>
+
+      </section>
+      
+        <section >
+          <p><em>The transition from traditional systems to a Data Mesh is a significant undertaking that requires a holistic approach to organizational change. It involves technological shifts and fundamental changes in how people think about, manage, and use data. Success depends on strong leadership, clear communication, and a sustained commitment to building a data-driven culture across the entire organization.</em></p>
+
+        </section>
+      
+        <section >
+          <p><strong>Key Factors for Successful Transition:</strong></p>
+<ol>
+<li>
+<p><strong>Mindset Shift:</strong></p>
+<ul>
+<li>Viewing data as a valuable product</li>
+<li>Embracing decentralization and domain ownership</li>
+</ul>
+</li>
+<li>
+<p><strong>Skill Development:</strong></p>
+<ul>
+<li>Promoting data literacy across the organization</li>
+<li>Developing data management and engineering skills within domain teams</li>
+<li>Shifting platform teams’ focus from control to enablement</li>
+</ul>
+</li>
+</ol>
+
+        </section>
+      
+        <section >
+          <ol start="3">
+<li>
+<p><strong>Leadership Support:</strong></p>
+<ul>
+<li>Executive sponsorship for the transition</li>
+<li>Clear communication of the vision and benefits</li>
+</ul>
+</li>
+<li>
+<p><strong>Cross-Functional Collaboration:</strong></p>
+<ul>
+<li>Breaking down silos between departments</li>
+<li>Encouraging knowledge sharing and collaboration across domains</li>
+</ul>
+</li>
+</ol>
+
+        </section>
+      
+        <section >
+          <ol start="5">
+<li>
+<p><strong>Agile and Product-Oriented Thinking:</strong></p>
+<ul>
+<li>Adopting agile methodologies for data product development</li>
+<li>Focusing on user needs and continuous improvement</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Governance Evolution:</strong></p>
+<ul>
+<li>Shifting from centralized control to federated governance</li>
+<li>Developing new policies and standards for decentralized data management</li>
+</ul>
+</li>
+</ol>
+
+        </section>
+      
+        <section >
+          <ol start="7">
+<li>
+<p><strong>Continuous Learning Culture:</strong></p>
+<ul>
+<li>Encouraging experimentation and learning from failures</li>
+<li>Providing ongoing training and support for new tools and methodologies</li>
+</ul>
+</li>
+<li>
+<p><strong>Change Management:</strong></p>
+<ul>
+<li>Implementing a robust change management program</li>
+<li>Addressing resistance to change and fostering buy-in</li>
+</ul>
+</li>
+</ol>
+
+        </section>
+      
+        <section >
+          <ol start="9">
+<li>
+<p><strong>New Roles and Responsibilities:</strong></p>
+<ul>
+<li>Creating roles like data product owners and data domain leads</li>
+<li>Redefining existing roles to align with the new data-centric approach</li>
+</ul>
+</li>
+<li>
+<p><strong>Metrics and Incentives:</strong></p>
+<ul>
+<li>Developing new KPIs aligned with data product thinking</li>
+<li>Adjusting incentive structures to encourage data sharing and quality</li>
+</ul>
+</li>
+</ol>
+
+        </section>
+      
+    </section>
+  
+
+  
+    <section>
+      <section >
+        <h3><a id="user-content-the-future-is-here" class="anchor" href="#the-future-is-here" aria-hidden="true"></a>The Future is Here</h3>
+<p><em>“Every member will be limited only by curiosity, vision, taste, and creativity.”</em></p>
+
+      </section>
+      
+        <section >
+          <p><strong>Importance of Data Products in the Age of AI:</strong></p>
+<ul>
+<li><strong>Inefficient AI Implementations:</strong> Without proper data products, AI tools may struggle to access relevant information, leading to suboptimal performance.</li>
+<li><strong>Increased Data Silos:</strong> Absence of data products could exacerbate data silos, hindering comprehensive insights.</li>
+</ul>
+
+        </section>
+      
+        <section >
+          <ul>
+<li><strong>Missed Innovation Opportunities:</strong> Companies may miss potential innovations uncovered by AI tools without accessible data products.</li>
+<li><strong>Reduced Agility:</strong> Difficulty in accessing and analyzing data could slow responses to market changes.</li>
+</ul>
+
+        </section>
+      
+        <section >
+          <ul>
+<li><strong>Compliance and Governance Risks:</strong> Ensuring data quality and compliance becomes more challenging.</li>
+<li><strong>Difficulty in Scaling AI Initiatives:</strong> Lack of data products could limit scaling AI across departments.</li>
+<li><strong>Talent Retention Issues:</strong> Frustration due to lack of high-quality data may lead to retention problems.</li>
+<li><strong>Missed Cross-Functional Opportunities:</strong> Limits the ability to leverage cross-functional insights.</li>
+</ul>
+
+        </section>
+      
+    </section>
+  
+
+  
+    <section>
+      <section >
+        <h3><a id="user-content-appendix-components" class="anchor" href="#appendix-components" aria-hidden="true"></a>Appendix: Components</h3>
+<p><strong>Key Components:</strong></p>
+<ul>
+<li><strong>Data Governance Systems</strong></li>
+<li><strong>Data Catalogs</strong></li>
+<li><strong>Storage Solutions</strong></li>
+<li><strong>Execution Governance</strong></li>
+<li><strong>Execution Systems</strong></li>
+</ul>
+
+      </section>
+      
+        <section >
+          <h4><a id="user-content-companies-providing-comprehensive-platforms" class="anchor" href="#companies-providing-comprehensive-platforms" aria-hidden="true"></a>Companies Providing Comprehensive Platforms</h4>
+<ul>
+<li>
+<p><strong>Starburst</strong></p>
+<ul>
+<li>Built on open-source technologies</li>
+<li>Provides analytics engine for Data Mesh</li>
+</ul>
+</li>
+<li>
+<p><strong>Atlan</strong></p>
+<ul>
+<li>Data catalog and metadata management</li>
+<li>Facilitates data discovery and collaboration</li>
+</ul>
+</li>
+<li>
+<p><strong>K2View</strong></p>
+<ul>
+<li>Data-as-product management with domain-oriented ownership</li>
+<li>Offers self-service capabilities</li>
+</ul>
+</li>
+</ul>
+
+        </section>
+      
+        <section >
+          <ul>
+<li>
+<p><strong>Databricks</strong></p>
+<ul>
+<li>Unified data analytics platform built on Apache Spark</li>
+<li>Lakehouse architecture combining data lake and data warehouse capabilities</li>
+<li>Supports data engineering, data science, and machine learning workflows</li>
+<li>Delta Lake for ACID transactions on data lakes</li>
+<li>Collaborative notebooks for data analysis and visualization</li>
+</ul>
+</li>
+</ul>
+
+        </section>
+      
+        <section >
+          <ul>
+<li>
+<p><strong>Denodo</strong></p>
+<ul>
+<li>Data virtualization and integration platform</li>
+<li>Enables real-time data access without replication</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Mesh Manager</strong></p>
+<ul>
+<li>Specialized tools for managing Data Mesh architectures</li>
+<li>Focuses on governance and domain management</li>
+</ul>
+</li>
+</ul>
+
+        </section>
+      
+        <section >
+          <ul>
+<li>
+<p><strong>Snowflake</strong></p>
+<ul>
+<li>Cloud-based data warehousing platform</li>
+<li>Separation of storage and compute for scalability</li>
+<li>Supports structured and semi-structured data</li>
+<li>Easy data sharing and collaboration</li>
+<li>Strong SQL support optimized for analytics queries</li>
+</ul>
+</li>
+</ul>
+
+        </section>
+      
+    </section>
+  
+
+  
+    <section>
+      <section >
+        <h4><a id="user-content-data-catalogs-data-metadata-events" class="anchor" href="#data-catalogs-data-metadata-events" aria-hidden="true"></a>Data Catalogs (Data, Metadata, Events)</h4>
+<ul>
+<li>
+<p><strong>LinkedIn’s DataHub</strong></p>
+<ul>
+<li>Open-source metadata platform</li>
+<li>Facilitates data discovery and lineage tracking</li>
+</ul>
+</li>
+<li>
+<p><strong>Apache Atlas</strong></p>
+<ul>
+<li>Open-source metadata management and governance</li>
+<li>Integrates with Hadoop ecosystem</li>
+</ul>
+</li>
+</ul>
+
+      </section>
+      
+        <section >
+          <ul>
+<li>
+<p><strong>Amundsen</strong></p>
+<ul>
+<li>Data discovery and metadata engine</li>
+<li>Developed by Lyft for data cataloging</li>
+</ul>
+</li>
+<li>
+<p><strong>Netflix Metacat</strong></p>
+<ul>
+<li>Unified metadata management system</li>
+<li>Makes big data discoverable and meaningful</li>
+</ul>
+</li>
+</ul>
+
+        </section>
+      
+    </section>
+  
+
+  
+    <section>
+      <section >
+        <h4><a id="user-content-workflow-orchestration-systems-and-execution-governance" class="anchor" href="#workflow-orchestration-systems-and-execution-governance" aria-hidden="true"></a>Workflow Orchestration Systems and Execution Governance</h4>
+<ul>
+<li>
+<p><strong>Estuary</strong></p>
+<ul>
+<li>Real-time data operations platform</li>
+<li>Supports real-time data integration and ETL</li>
+<li>Handles streaming and batch data processing</li>
+<li>Manages schema evolution and data quality</li>
+</ul>
+</li>
+</ul>
+
+      </section>
+      
+        <section >
+          <ul>
+<li>
+<p><strong>Apache Airflow</strong></p>
+<ul>
+<li>Platform to programmatically author, schedule, and monitor workflows</li>
+<li>Widely used for orchestrating complex data pipelines</li>
+</ul>
+</li>
+<li>
+<p><strong>Dagster</strong></p>
+<ul>
+<li>Data orchestrator for machine learning, analytics, and ETL</li>
+<li>Emphasizes software-defined data assets</li>
+</ul>
+</li>
+</ul>
+
+        </section>
+      
+        <section >
+          <ul>
+<li>
+<p><strong>Luigi</strong></p>
+<ul>
+<li>Python module for building complex pipelines</li>
+<li>Handles dependency resolution and workflow management</li>
+</ul>
+</li>
+<li>
+<p><strong>Kubeflow</strong></p>
+<ul>
+<li>Machine learning toolkit for Kubernetes</li>
+<li>Facilitates deployment of scalable ML workflows</li>
+</ul>
+</li>
+</ul>
+
+        </section>
+      
+        <section >
+          <ul>
+<li>
+<p><strong>Prefect</strong></p>
+<ul>
+<li>Modern workflow orchestration tool</li>
+<li>Focuses on dataflow and task scheduling</li>
+</ul>
+</li>
+<li>
+<p><strong>Netflix Maestro</strong></p>
+<ul>
+<li>Workflow orchestrator for big data jobs</li>
+<li>Manages job dependencies and scheduling</li>
+</ul>
+</li>
+<li>
+<p><strong>Argo Workflows</strong></p>
+<ul>
+<li>Container-native workflow engine for Kubernetes</li>
+<li>Executes DAGs of tasks using Kubernetes resources</li>
+</ul>
+</li>
+</ul>
+
+        </section>
+      
+    </section>
+  
+
+  
+    <section >
+      <h1><a id="user-content-fin" class="anchor" href="#fin" aria-hidden="true"></a>FIN</h1>
+
+    </section>
+  
+
 
 
     </div>
 
-
   </div>
 
-  <div class="line top"></div>
-  <div class="line bottom"></div>
-  <div class="line left"></div>
-  <div class="line right"></div>
+  <script src="libs/reveal.js/dist/reveal.js"></script>
 
-  <script src="libs/reveal.js/4.3.1/reveal.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/notes/notes.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/markdown/markdown.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/highlight/highlight.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/math/math.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/fullscreen/plugin.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/animate/plugin.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/animate/svg.min.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/anything/plugin.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/anything/Chart.min.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/anything/d3/d3.v3.min.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/anything/d3.patch.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/anything/d3/queue.v1.min.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/anything/d3/topojson.v1.min.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/anything/function-plot.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/customcontrols/plugin.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/embed-tweet/plugin.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/chart/chart.min.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/chart/plugin.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/verticator/verticator.js"></script>
+<script src="libs/reveal.js/plugin/zoom/zoom.js"></script>
 
-<script src="libs/reveal.js/4.3.1/plugin/zoom/zoom.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/search/search.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/menu/menu.js"></script>
-<script src="libs/reveal.js/4.3.1/plugin/chalkboard/plugin.js"></script>
-
-<!--	<script src="libs/reveal.js/4.3.1/plugin/audio-slideshow/plugin.js"></script>  -->
-<!--	<script src="libs/reveal.js/4.3.1/plugin/audio-slideshow/recorder.js"></script>-->
-<!--	<script src="libs/reveal.js/4.3.1/plugin/audio-slideshow/RecordRTC.js"></script>-->
-
-  
-
+<script src="libs/reveal.js/plugin/notes/notes.js"></script>
+<script src="libs/reveal.js/plugin/search/search.js"></script>
+<script src="libs/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="libs/reveal.js/plugin/highlight/highlight.js"></script>
+<script src="libs/reveal.js/plugin/math/math.js"></script>
 <script>
-  const printPlugins = [
-      RevealNotes,
-      RevealHighlight,
-      RevealMath.MathJax3,
-      RevealAnimate,
-      RevealChalkboard, 
-			RevealEmbedTweet,
-			RevealChart,
-		];
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
 
-		const plugins =  [...printPlugins,
-		RevealZoom, 
-		RevealSearch, 
-				RevealMarkdown, 
-				RevealMenu, 
-				RevealFullscreen,
-				RevealAnything,
-				//RevealAudioSlideshow,
-				//RevealAudioRecorder,
-				RevealCustomControls, 
-				// poll
-				// question
-				// seminar
-				Verticator 
-				 ]
+        controls: true,
+        controlsTutorial: true,
+        controlsLayout: 'bottom-right',
+        controlsBackArrows: 'faded',
+        progress: true,
+        slideNumber: false,
+        history: true,
+        keyboard: true,
+        overview: true,
+        center: true,
+        touch: true,
+        loop: false,
+        rtl: false,
+        shuffle: false,
+        fragments: true,
+        fragmentInURL: false,
+        embedded: false,
+        help: true,
+        showNotes: false,
+        autoPlayMedia: false,
+        autoSlide: 0,
+        autoSlideStoppable: true,
+        autoSlideMethod: Reveal.navigateNext,
+        defaultTiming: 120,
+        mouseWheel: true,
+        hideAddressBar: true,
+        previewLinks: false,
+        transition: 'default',
+        transitionSpeed: 'default',
+        backgroundTransition: 'default',
+        viewDistance: 3,
+        parallaxBackgroundImage: '',
+        parallaxBackgroundSize: '',
+        parallaxBackgroundHorizontal: 0,
+        parallaxBackgroundVertical: 0,
+        display: 'block',
 
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath],
+        
+        math: {
+            mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+            config: 'TeX-AMS_HTML-full',
+            TeX: { Macros: { RR: "{\\bf R}" } }
+        },
+        /*
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            
+            { src: 'libs/reveal.js/3.8.0/plugin/search/search.js', async: true },
+            
 
-		// Also available as an ES module, see:
-		// https://revealjs.com/initialization/
-		Reveal.initialize({
-			controls: true,
-      controlsTutorial: true,
-      controlsLayout: 'bottom-right',
-      controlsBackArrows: 'faded',
-      progress: true,
-      slideNumber: false,
-      //#showSlideNumber "all" "print" "speaker"
-      hash: true, //# hash: false,
-      //# respondToHashChanges: true,
-      //# history: false,
-      keyboard: true,
-      //#keyboardCondition: null,
-      overview: true,
-      center: true,
-      touch: true,
-      loop: false,
-      rtl: false,
-      //#navigationMode: 'default', linear grid
-      shuffle: false,
-      fragments: true,
-      fragmentInURL: false,
-      embedded: false,
-      help: true,
-      //#pause: true
-      showNotes: false,
-      autoPlayMedia: false, // TODO fix this to a nullable value
-      //#preloadIframes: null. true false
-      //#autoAnimate: true
-      //#autoAnimateMatcher: null,
-      //#autoAnimateEasing: 'ease',
-      //autoAnimateDuration: 1.0,
-      //#autoAnimateUnmatched: true
-      //#autoAnimateStyles: []
-      autoSlide: 0, // TODO fix this to a falseable value
-      autoSlideStoppable: true,
-      autoSlideMethod: '0',
-      defaultTiming: 120,
-      mouseWheel: false,
-      //#previewLinks: false
-      //#postMessage: true, // TODO : this can cause issues with the vscode api ???
-      //#postMessageEvents: false,
-      //#focusBodyOnPageVisibilityChange: true,
-      transition: 'slide',
-      transitionSpeed: 'default',
-      backgroundTransition: 'fade',
-      //#pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
-      //#pdfSeparateFragments: true,
-      //#pdfPageHeightOffset: -1,
-      viewDistance: 3,
-      //#mobileViewDistance: 2,
-      display: 'block',
-      //#hideInactiveCursor: true,
-      //#hideCursorTime: 5000
+            
+            { src: 'libs/reveal.js-plugins/3.8.0/plugin/chalkboard/chalkboard.js' },
+                
 
-      // Parallax Background
-      parallaxBackgroundImage: '',
-      parallaxBackgroundSize: '',
-      parallaxBackgroundHorizontal: 0,
-      parallaxBackgroundVertical: 0,
+            
+            { src: 'libs/reveal.js/3.8.0/plugin/menu/menu.js' },
+            
 
-      //Presentation Size
-      width: 960,
-			height: 700,
-			margin: 0.04,
-      minScale: 0.2,
-      maxScale: 2,
-      disableLayout: false,
+            
+            { src: 'libs/reveal.js/3.8.0/plugin/title-footer/title-footer.js', async: true, callback: function () { title_footer.initialize(); } },
+            
+            {
+                src: 'libs/highlight.js/9.15.10/reveal-code-focus-1.0.0-mod.js',
+                async: true,
+                callback: function () {
+                    RevealCodeFocus();
+                }
+            },
+            // {src: 'libs/reveal.js/3.8.0/plugin/line-numbers/line-numbers.js'}
+        ],
+        keyboard: {
+            67: function () { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+            66: function () { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+            46: function () { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+            8: function () { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+            68: function () { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+        },
+        chart: {
+            defaults: {
+                global: {
+                    title: { fontColor: "#FFF" },
+                    legend: {
+                        position: "bottom",
+                            labels: { fontColor: "#FFF" },
+                    },
+                    tooltips: {
+                        labels: { fontColor: "#FFF" },
+                    },
+                },
+                scale: {
+                    scaleLabel: { fontColor: "#FFF" },
+                    gridLines: { color: "#FFF", zeroLineColor: "#FFF" },
+                    ticks: { fontColor: "#FFF" },
+                }
+            },
+            line: { borderColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"], "borderDash": [[5, 10], [0, 0]] },
+            bar: { backgroundColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] },
+            pie: { backgroundColor: [["rgba(0,0,0,.8)", "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"]] },
+            radar: { borderColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] },
+        },
+        anything: [ 
+            {
+                className: "mermaid"
+            },
+            // ...
+        ],
+        menu: {
+            // Specifies which side of the presentation the menu will 
+            // be shown. Use 'left' or 'right'.
+            side: 'left',
 
-      audio: {
-        prefix: 'audio/', // audio files are stored in the "audio" folder
-        suffix: '.ogg', // audio files have the ".ogg" ending
-        textToSpeechURL: null, // the URL to the text to speech converter
-        defaultNotes: false, // use slide notes as default for the text to speech converter
-        defaultText: false, // use slide text as default for the text to speech converter
-        advance: 0, // advance to next slide after given time in milliseconds after audio has played, use negative value to not advance
-        autoplay: false, // automatically start slideshow
-        defaultDuration: 5, // default duration in seconds if no audio is available
-        defaultAudios: true, // try to play audios with names such as audio/1.2.ogg
-        playerOpacity: 0.05, // opacity value of audio player if unfocused
-        playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls
-        startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
-      },
-      
-      chalkboard: { // font-awesome.min.css must be available
-        //src: "chalkboard/chalkboard.json",
-        storage: "chalkboard-demo",
-      },
-      
-			customcontrols: {
-					controls: [
-      						{
-						  id: 'toggle-overview',
-						  title: 'Toggle overview (O)',
-						  icon: '<i class="fa fa-th"></i>',
-						  action: 'Reveal.toggleOverview();'
-						}
-						,
-      {
-        icon: '<i class="fa fa-pen-square"></i>',
-        title: 'Toggle chalkboard (B)',
-        action: 'RevealChalkboard.toggleChalkboard();'
-      },
-      {
-        icon: '<i class="fa fa-pen"></i>',
-        title: 'Toggle notes canvas (C)',
-        action: 'RevealChalkboard.toggleNotesCanvas();'
-      }
-      
-				]
-			},
-			chart: {
-					defaults: { 
-						color: 'lightgray', // color of labels
-						scale: { 
-							beginAtZero: true, 
-							ticks: { stepSize: 1 },
-							grid: { color: "lightgray" } , // color of grid lines
-						},
-					},
-					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
-					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
-					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
-					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
-			},
-			math: {
-				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
-				config: 'TeX-AMS_HTML-full',
-				// pass other options into `MathJax.Hub.Config()`
-				TeX: { Macros: { RR: "{\\bf R}" } }
-				},
-				anything: [ 
-				{
-		className: "plot",
-		defaults: {width:500, height: 500, grid:true},
-		initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) })
-	 },
-	 {
-		className: "chart",  
-		initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  })
-	 },
-	 {
-		className: "anything",
-		initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} })
-	 },
-					],
-			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: (window.location.search.match(/print-pdf/gi) ? printPlugins : plugins ) 
-		});
-			
+                // Specifies the width of the menu.
+                // Can be one of the following:
+                // 'normal', 'wide', 'third', 'half', 'full', or
+                // any valid css length value
+                width: 'normal',
 
+                    // Add slide numbers to the titles in the slide list.
+                    // Use 'true' or format string (same as reveal.js slide numbers)
+                    numbers: false,
 
-	    // Change chalkboard theme : 
-		function changeTheme(input) {
-			var config = {};
-			config.theme = input.value;
-			Reveal.getPlugin("RevealChalkboard").configure(config);
-			input.blur();
-		}
+                        // Specifies which slide elements will be used for generating
+                        // the slide titles in the menu. The default selects the first
+                        // heading element found in the slide, but you can specify any
+                        // valid css selector and the text from the first matching
+                        // element will be used.
+                        // Note: that a section data-menu-title attribute or an element
+                        // with a menu-title class will take precedence over this option
+                        titleSelector: 'h1, h2, h3, h4, h5, h6',
 
-		// // Handle the message inside the webview
-        // window.addEventListener('message', event => {
+                            // If slides do not have a matching title, attempt to use the
+                            // start of the text content as the title instead
+                            useTextContentForMissingTitles: false,
 
-        //     const message = event.data; // The JSON data our extension sent
+                                // Hide slides from the menu that do not have a title.
+                                // Set to 'true' to only list slides with titles.
+                                hideMissingTitles: false,
 
-        //     switch (message.command) {
-        //         case 'refactor':
-        //             Reveal.toggleHelp();
-        //     }
-        // });
+                                    // Adds markers to the slide titles to indicate the 
+                                    // progress through the presentation. Set to 'false'
+                                    // to hide the markers.
+                                    markers: true,
 
-		if (window.location.search.match(/print-pdf-now/gi)) {
-      		setTimeout(() => {
-				window.print();
-			  }, 2500);
-			
-    }
+                                        // Specify custom panels to be included in the menu, by
+                                        // providing an array of objects with 'title', 'icon'
+                                        // properties, and either a 'src' or 'content' property.
+                                        // custom: false,
+                                        custom: [],
+                                            // Specifies the themes that will be available in the themes
+                                            // menu panel. Set to 'true' to show the themes menu panel
+                                            // with the default themes list. Alternatively, provide an
+                                            // array to specify the themes to make available in the
+                                            // themes menu panel, for example...
+                                            // [
+                                            //     { name: 'Black', theme: 'css/theme/black.css' },
+                                            //     { name: 'White', theme: 'css/theme/white.css' },
+                                            //     { name: 'League', theme: 'css/theme/league.css' }
+                                            // ]
+                                            themes: false,
+
+                                                // Specifies the path to the default theme files. If your
+                                                // presentation uses a different path to the standard reveal
+                                                // layout then you need to provide this option, but only
+                                                // when 'themes' is set to 'true'. If you provide your own 
+                                                // list of themes or 'themes' is set to 'false' the 
+                                                // 'themesPath' option is ignored.
+                                                themesPath: 'css/theme/',
+
+                                                    // Specifies if the transitions menu panel will be shown.
+                                                    // Set to 'true' to show the transitions menu panel with
+                                                    // the default transitions list. Alternatively, provide an
+                                                    // array to specify the transitions to make available in
+                                                    // the transitions panel, for example...
+                                                    // ['None', 'Fade', 'Slide']
+                                                    transitions: false,
+
+                                                        // Adds a menu button to the slides to open the menu panel.
+                                                        // Set to 'false' to hide the button.
+                                                        openButton: true,
+
+                                                            // If 'true' allows the slide number in the presentation to
+                                                            // open the menu panel. The reveal.js slideNumber option must 
+                                                            // be displayed for this to take effect
+                                                            openSlideNumber: false,
+
+                                                                // If true allows the user to open and navigate the menu using
+                                                                // the keyboard. Standard keyboard interaction with reveal
+                                                                // will be disabled while the menu is open.
+                                                                keyboard: true,
+
+                                                                    // Normally the menu will close on user actions such as
+                                                                    // selecting a menu item, or clicking the presentation area.
+                                                                    // If 'true', the sticky option will leave the menu open
+                                                                    // until it is explicitly closed, that is, using the close
+                                                                    // button or pressing the ESC or m key (when the keyboard 
+                                                                    // interaction option is enabled).
+                                                                    sticky: false,
+
+                                                                        // If 'true' standard menu items will be automatically opened
+                                                                        // when navigating using the keyboard. Note: this only takes 
+                                                                        // effect when both the 'keyboard' and 'sticky' options are enabled.
+                                                                        autoOpen: true,
+
+                                                                            // If 'true' the menu will not be created until it is explicitly
+                                                                            // requested by calling RevealMenu.init(). Note this will delay
+                                                                            // the creation of all menu panels, including custom panels, and
+                                                                            // the menu button.
+                                                                            delayInit: false,
+
+                                                                                // If 'true' the menu will be shown when the menu is initialised.
+                                                                                openOnInit: false,
+
+                                                                                    // By default the menu will load it's own font-awesome library
+                                                                                    // icons. If your presentation needs to load a different
+                                                                                    // font-awesome library the 'loadIcons' option can be set to false
+                                                                                    // and the menu will not attempt to load the font-awesome library.
+                                                                                    loadIcons: false
+        },
+        chalkboard: {
+            toggleChalkboardButton: { left: "60px", bottom: "30px", top: "auto", right: "auto" },
+            toggleNotesButton: { left: "90px", bottom: "30px", top: "auto", right: "auto" },
+
+        }
+        */
+    });
+
 </script>
+
 
 </body>
 
