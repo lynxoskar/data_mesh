@@ -1,6 +1,6 @@
 ---
 # league beige night serif solarized sky
-theme: league  
+theme: sky  
 
 title: "Data Mesh"
 
@@ -94,7 +94,7 @@ Traditional pipelines with centralized data platforms. Data flows through a seri
 
 **Data Quality and Governance:**
 
-- **Systems of Record:** May require complex mechanisms to ensure data integrity
+- **Systems of Record:** May require complex mechanisms to ensure data integrity (concurrency, temporal coupling)
 - **Data Pipelines:** Leverage immutability and functional transformations for better data quality control
 
 ---
@@ -127,26 +127,23 @@ Traditional pipelines with centralized data platforms. Data flows through a seri
 
 --
 
-- **Domain Experts:** Relies on domain experts to ensure data models accurately reflect business reality.
-- **Decentralized Ownership:** Each business domain takes responsibility for its own data, enhancing stewardship and data quality.
+- **Domain Experts:** Relies on domain experts to ensure data models accurately reflect business reality. '*Centralized teams may lack specific domain knowledge, leading to misinterpretations and errors in data processing*'
+- **Decentralized Ownership:** Each business domain takes responsibility for its own data, enhancing stewardship and data quality. '*Data engineering teams responsible for managing centralized data lakes often become overwhelmed, leading to delays and reduced agility*'
 
 --
 
-- **Alignment with Business Structure:** Mirrors how businesses employ specialized teams for specific operations.
-- **Improved Decision-Making:** Placing data ownership closer to the source enhances data-driven decisions.
-
----
 
 #### 2. Data as a Product
 
 *This principle treats data as a valuable asset, applying product thinking to data management.*
 
-- **Product Thinking:** Data products have a vision, strategy, and roadmap. Ownership enhances stewardship, innovation, and experimentation.
-- **Strategic Asset:** Data is a core product, not a byproduct of operations.
-
---
+- **Product Thinking:** Data products have a vision, strategy, and roadmap. Ownership enhances stewardship, innovation, and experimentation. '*Data lakes can easily turn into "data swamps" with poor data quality and inconsistent metadata*'
 
 - **Quality Focus:** Data products are usable, understandable, correct, timely, and complete.
+'*Data ownership remains with those who understand it best, improving overall data quality and usability*'
+--
+
+
 - **Lifecycle Management:** Managed through their entire lifecycle, from creation to retirement.
 - **Cultural Shift:** Ownership is claimed, not assigned. Focus on delivering value, not just completing assignments.
 
@@ -190,11 +187,6 @@ Traditional pipelines with centralized data platforms. Data flows through a seri
 - **Automated Enforcement:** Governance rules are computationally enforced, reducing manual oversight.
 - **Balance:** Strikes a balance between centralized control and domain autonomy.
 
----
-
-#### Summary
-
-*These principles work together to create a data ecosystem that is scalable, flexible, and aligned with business needs. The domain-oriented approach and data-as-a-product mindset address issues of data quality and relevance. The self-serve infrastructure enables efficient data product creation and consumption. Federated governance ensures that this decentralized system remains cohesive and compliant.*
 
 ---
 
@@ -260,9 +252,7 @@ Traditional pipelines with centralized data platforms. Data flows through a seri
 
 --
 
-*The transition from traditional systems to a Data Mesh is a significant undertaking that requires a holistic approach to organizational change. It involves technological shifts and fundamental changes in how people think about, manage, and use data. Success depends on strong leadership, clear communication, and a sustained commitment to building a data-driven culture across the entire organization.*
 
---
 
 **Key Factors for Successful Transition:**
 
